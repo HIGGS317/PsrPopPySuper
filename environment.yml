@@ -1,0 +1,14 @@
+name: Psrpoppy3
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - matplotlib
+  - scipy
+  - wxpython
+  - gfortran
+  - pytoml
+  - scipy
+  - pip:
+    - enscons
+
