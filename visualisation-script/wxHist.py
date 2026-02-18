@@ -16,7 +16,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_wxagg import FigureCanvasWxAgg as FigCanvas
 from matplotlib.backends.backend_wx import NavigationToolbar2Wx as NavigationToolbar
 
-import dataobj
+from psrpoppy import dataobj
 
 class ViewException(Exception):
     pass
