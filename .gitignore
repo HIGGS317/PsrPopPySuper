@@ -1,3 +1,4 @@
+.sconsign.dblite
 PMSURV.results
 populate.model
 populate.cmd
@@ -19,4 +20,3 @@ fortran/compile.txt
 threadpop.py
 build/
 dist/
-setup-requires
