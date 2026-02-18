@@ -33,8 +33,7 @@ def find_alpha1(pulsar, survey):
 
 def kepler_solve_1(ecc, mean_anom):
 
-    ecc_anom = mean_anom + ecc * math.sin(mean_anom) * \ 
-                     (1. + ecc * math.cos(mean_anom))
+    ecc_anom = mean_anom + ecc * math.sin(mean_anom) * (1. + ecc * math.cos(mean_anom))
     e_fit = ecc_anom + 10.
 
     # newton-raphson method
