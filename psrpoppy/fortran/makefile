@@ -5,8 +5,11 @@ all: libne2001.so libykarea.so libsla.so libvxyz.so libgamma.so
 library : *.f
 	$(GF) -O2 -fPIC -fno-second-underscore -c -I. -std=legacy *.f
 
-libne2001.so : library
-	$(LINK.f) -o libne2001.so ne2001.o dm.o psr_ne.o dist.o calc_xyz.o density.o glun.o
+#libne2001.so : library
+#	$(LINK.f) -o libne2001.so ne2001.o dm.o psr_ne.o dist.o calc_xyz.o density.o glun.o
+
+libne2025.so : library
+	$(LINK.f) -o libne2025.so ne2025.o dm.o psr_ne.o dist.o calc_xyz.o density.o glun.o
 
 libykarea.so : library
 	$(LINK.f) -o libykarea.so ykarea.o psrran.o

@@ -1,9 +1,5 @@
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
-c 24 June 2002: added calculations of path lengths through LISM components
-c 26  May 2002: modified for NE2001 routines which are cleaned-up
-c             versions of development routines.
-c Nov 1999 - May 2002: development versions
-c 1992-1993: TC93 version
+c Based on electron model 2001 file by lorimer
 c Feb 18, 2026 Replaced NE2001 files with NE2025
 c				Old files are not removed but moved to NE2001 folder
 
@@ -626,7 +622,11 @@ c	farm:	factors that multiply n_e^2 when calculating SM
 	real negc0, Fgc0
         common /gcparms/ negc0, Fgc0
         
-        call mkfile('gal01.inp',fullname,ip,lip)
+c        call mkfile('gal01.inp',fullname,ip,lip)
+
+c		 Replacing NE2001 files with NE2025,
+c		We are not thinking to support NE2001 and but the files will be in the folder named 2001 and be used with changing code
+        call mkfile('gal25.inp', fullname, ip, lip) 
         open(11,file=fullname,status='old')
 c	   open(11,file='gal01.inp',status='old')
 	   read(11,*)
@@ -1846,7 +1846,11 @@ c losname = useful name
 	  j=1
 c	  write(6,*) 'reading neclumpN.NE2001.dat'
 
-        call mkfile('neclumpN.NE2001.dat',fullname,ip,lip)
+c        call mkfile('neclumpN.NE2001.dat',fullname,ip,lip)
+
+c		 Replacing NE2001 files with NE2025,
+c		We are not thinking to support NE2001 and but the files will be in the folder named 2001 and be used with changing code
+        call mkfile('neclumpN.NE2025.dat',fullname,ip,lip)
 		open(luclump,file=fullname,status='old')
 c	  open(luclump, file='neclumpN.NE2001.dat', status='old')
 	  read(luclump,*)				! label line
@@ -1986,7 +1990,11 @@ c first time through, calculate xc, yc, zc
 	if(first) then 		!read void parameters
 	  j=1
 c	  write(6,*) 'reading nevoidN.dat.clean'
-        call mkfile('nevoidN.NE2001.dat',fullname,ip,lip)
+c        call mkfile('nevoidN.NE2001.dat',fullname,ip,lip)
+
+c		Replacing NE2001 files with NE2025,
+c		We are not thinking to support NE2001 and but the files will be in the folder named 2001 and be used with changing code
+        call mkfile('nevoidN.NE2025.dat',fullname,ip,lip)
 		open(luvoid,file=fullname,status='old')
 c	  open(luvoid, file='nevoidN.NE2001.dat', status='old')
 	  read(luvoid,*)				! label line

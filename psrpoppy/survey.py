@@ -585,10 +585,14 @@ class Survey:
             kappa = 0.15  # taking this as avrg for now
 
             # calculate scintillation timescale
-            scint_ts, scint_bw = go.ne2001_scint_time_bw(psr.dtrue,
+            scint_ts, scint_bw = go.ne2025_scint_time_bw(psr.dtrue,
                                                          psr.gl,
                                                          psr.gb,
                                                          self.freq)
+            
+            # Replaced ne2001 function with ne2025
+
+            #scint_ts, scint_bw = go.ne2001_scint_time_bw(psr.dtrue,psr.gl,psr.gb,self.freq)
 
             # calc n_t and n_f
             if scint_ts is None:

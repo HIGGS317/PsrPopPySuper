@@ -66,7 +66,8 @@ env.Append(CPPPATH=[libpath])
 
 # dictionary of libraries and files needed for library
 LIBDIC = {}
-LIBDIC['libne2001']  = ['ne2001.f', 'dm.f', 'psr_ne.f', 'dist.f', 'calc_xyz.f', 'density.f', 'glun.f']
+#LIBDIC['libne2001']  = ['ne2001.f', 'dm.f', 'psr_ne.f', 'dist.f', 'calc_xyz.f', 'density.f', 'glun.f']
+LIBDIC['libne2025']  = ['ne2025.f', 'dm.f', 'psr_ne.f', 'dist.f', 'calc_xyz.f', 'density.f', 'glun.f']
 LIBDIC['libykarea']  = ['ykarea.f', 'psrran.f']
 LIBDIC['libsla']     = ['galtfeq.f', 'sla.f']
 LIBDIC['libvxyz']    = ['vxyz.f', 'rkqc.f', 'rk4.f']
@@ -101,7 +102,7 @@ executables = ['dosurvey', 'evolve', 'populate']
 insbins = env.InstallAs(target=[os.path.join(installprefix, 'bin', ex) for ex in executables],
                source=[os.path.join(pyprefix, ex+'.py') for ex in executables])
 
-otherfiles = glob.glob('psrpoppy/fortran/*.so') + glob.glob('psrpoppy/fortran/lookuptables/*') + glob.glob('psrpoppy/models/*') + glob.glob('psrpoppy/surveys/*')
+otherfiles = glob.glob('psrpoppy/fortran/*.so') + glob.glob('psrpoppy/fortran/lookuptables/*') + glob.glob('psrpoppy/models/*') + glob.glob('psrpoppy/surveys/*')+glob.glob('psrpoppy/fortran/NE_2001/*')
 
 platlib = env.Whl('platlib', py_source + libs + otherfiles, root='')
 whl = env.WhlFile(source=platlib)
@@ -109,7 +110,7 @@ whl = env.WhlFile(source=platlib)
 # Add automatic source files, plus any other needed files.
 sdist_source=list(set(
                   ['PKG-INFO', 'setup.py'] +
-                  glob.glob('psrpoppy/fortran/*.f') + glob.glob('psrpoppy/fortran/*.inc') + glob.glob('psrpoppy/fortran/lookuptables/*') + glob.glob('psrpoppy/models/*') + glob.glob('psrpoppy/surveys/*')))
+                  glob.glob('psrpoppy/fortran/*.f') + glob.glob('psrpoppy/fortran/*.inc') + glob.glob('psrpoppy/fortran/lookuptables/*') + glob.glob('psrpoppy/models/*') + glob.glob('psrpoppy/surveys/*')+glob.glob('psrpoppy/fortran/NE_2001/*')))
 
 sdist_source += py_source
 

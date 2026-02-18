@@ -45,7 +45,7 @@ def generate(ngen,
              pDistType='lnorm',
              radialDistType='lfl06',
              radialDistPars=7.5,
-             electronModel='ne2001',
+             electronModel='ne2025',
              pDistPars=[2.7, -0.34],
              siDistPars=[-1.6, 0.35],
              lumDistType='lnorm',
@@ -94,7 +94,7 @@ def generate(ngen,
                               'slab', 'disk', 'gauss']:
         print("Unsupported radial distribution: {0}".format(radialDistType))
 
-    if electronModel not in ['ne2001', 'lmt85']:
+    if electronModel not in ['ne2001', 'lmt85','ne2025']:
         print("Unsupported electron model: {0}".format(electronModel))
 
     if pattern not in ['gaussian', 'airy']:
@@ -291,6 +291,8 @@ def generate(ngen,
         # then calc DM  using fortran libs
         if pop.electronModel == 'ne2001':
             p.dm = go.ne2001_dist_to_dm(p.dtrue, p.gl, p.gb)
+        elif pop.electronModel == 'ne2025':
+            p.dm = go.ne2025_dist_to_dm(p.dtrue,p.gl,p.gb)
         elif pop.electronModel == 'lmt85':
             p.dm = go.lmt85_dist_to_dm(p.dtrue, p.gl, p.gb)
 
@@ -545,9 +547,9 @@ if __name__ == '__main__':
 
     # electron/dm model
     parser.add_argument('-dm', type=str, nargs=1, required=False,
-                        default=['ne2001'],
+                        default=['ne2025'],
                         help='Galactic electron distribution model to use',
-                        choices=['ne2001', 'lmt85'])
+                        choices=['ne2001','lmt85','ne2025'])
 
     # GPS sources
     parser.add_argument('-gps', type=float, nargs=2, required=False,

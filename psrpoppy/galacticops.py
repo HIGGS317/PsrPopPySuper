@@ -13,8 +13,11 @@ __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
 fortranpath = os.path.join(__libdir__, 'psrpoppy', 'fortran')
 
-ne2001lib = C.CDLL(os.path.join(fortranpath, 'libne2001.so'))
-ne2001lib.dm_.restype = C.c_float
+#ne2001lib = C.CDLL(os.path.join(fortranpath, 'libne2001.so'))
+#ne2001lib.dm_.restype = C.c_float
+
+ne2025lib = C.CDLL(os.path.join(fortranpath, 'libne2025.so'))
+ne2025lib.dm_.restype = C.c_float
 
 slalib = C.CDLL(os.path.join(fortranpath, 'libsla.so'))
 vxyzlib = C.CDLL(os.path.join(fortranpath, 'libvxyz.so'))
@@ -128,6 +131,28 @@ def lmt85_dist_to_dm(dist, gl, gb):
                          C.byref(inpath),
                          C.byref(linpath))
 
+def ne2025_dist_to_dm(dist, gl, gb):
+    """Use NE2001 distance model."""
+    # expects -180 < l < 180
+    dist = C.c_float(dist)
+    gl = C.c_float(gl)
+    gb = C.c_float(gb)
+    # Old (Python 2): passing str to create_string_buffer which raised
+    # TypeError under Python 3 because ctypes expects bytes.
+    # inpath = C.create_string_buffer(fortranpath)
+    # Old linpath used the string length; in Python 3 prefer the
+    # encoded byte-length to match the buffer size.
+    # linpath = C.c_int(len(fortranpath))
+    inpath = C.create_string_buffer(fortranpath.encode())
+    linpath = C.c_int(len(fortranpath.encode()))
+    return ne2025lib.dm_(C.byref(dist),
+                         C.byref(gl),
+                         C.byref(gb),
+                         C.byref(C.c_int(4)),
+                         C.byref(C.c_float(0.0)),
+                         C.byref(inpath),
+                         C.byref(linpath))
+
 
 def ne2001_get_smtau(dist, gl, gb):
     """Use NE2001 model to get the DISS scattering timescale"""
@@ -163,6 +188,40 @@ def ne2001_get_smtau(dist, gl, gb):
                      )
     return sm.value, smtau.value
 
+def ne2025_get_smtau(dist, gl, gb):
+    """Use NE2001 model to get the DISS scattering timescale"""
+    dist = C.c_float(dist)
+
+    # gl gb need to be in radians
+    gl = C.c_float(math.radians(gl))
+    gb = C.c_float(math.radians(gb))
+
+    # call dmdsm and get the value out of smtau
+    ndir = C.c_int(-1)
+    sm = C.c_float(0.)
+    smtau = C.c_float(0.)
+    # Old (Python 2): passing str caused create_string_buffer() TypeError
+    # inpath = C.create_string_buffer(fortranpath)
+    # linpath = C.c_int(len(fortranpath))
+    inpath = C.create_string_buffer(fortranpath.encode())
+    linpath = C.c_int(len(fortranpath.encode()))
+    ne2025lib.dmdsm_(C.byref(gl),
+                     C.byref(gb),
+                     C.byref(ndir),
+                     C.byref(C.c_float(0.0)),
+                     C.byref(dist),
+                     # Old: C.create_string_buffer(' ')  # str in Python2
+                     # Now explicitly pass a bytes object
+                     C.byref(C.create_string_buffer(b' ')),
+                     C.byref(sm),
+                     C.byref(smtau),
+                     C.byref(C.c_float(0.0)),
+                     C.byref(C.c_float(0.0)),
+                     C.byref(inpath),
+                     C.byref(linpath)
+                     )
+    return sm.value, smtau.value
+
 
 def ne2001_scint_time_bw(dist, gl, gb, freq):
     sm, smtau = ne2001_get_smtau(dist, gl, gb)
@@ -181,6 +240,23 @@ def ne2001_scint_time_bw(dist, gl, gb, freq):
 
     return scint_time, scint_bw
 
+
+def ne2025_scint_time_bw(dist, gl, gb, freq):
+    sm, smtau = ne2025_get_smtau(dist, gl, gb)
+    if smtau <= 0.:
+        scint_time = None
+    else:
+        # reference: eqn (46) of Cordes & Lazio 1991, ApJ, 376, 123
+        # uses coefficient 3.3 instead of 2.3. They do this in the code
+        # and mention it explicitly, so I trust it!
+        scint_time = 3.3 * (freq/1000.)**1.2 * smtau**(-0.6)
+    if sm <= 0.:
+        scint_bw = None
+    else:
+        # and eq 48
+        scint_bw = 223. * (freq/1000.)**4.4 * sm**(-1.2) / dist
+
+    return scint_time, scint_bw
 
 def lb_to_radec(l, b):
     """Convert l, b to RA, Dec using SLA fortran (should be faster)."""
