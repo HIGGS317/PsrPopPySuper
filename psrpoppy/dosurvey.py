@@ -69,7 +69,7 @@ def write(surveyPops,
 
         # Write ascii file if required
         if asc and surv is not None:
-            survpop.write_asc(surv + '.det')
+            survpop.write_asc(surv + '.txt')
 
         if summary and surv is not None:
             # Write a summary file for the survey (if true)

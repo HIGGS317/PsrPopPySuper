@@ -110,14 +110,14 @@ class Population:
             """Write population to an ascii file"""
 
             with open(outf, 'w') as f:
-                titlestr = "Period_ms DM Pdot Width_ms GL GB S1400"
+                titlestr = "Period_ms Pdot DM Width_ms GL GB S1400"
                 titlestr = " ".join([titlestr, "L1400 SPINDEX SNR DTRUE X Y Z\n"])
                 f.write(titlestr)
                 for psr in self.population:
 
                     s = "{0}".format(psr.period)
-                    s = " ".join([s, "{0}".format(psr.dm)])
                     s = " ".join([s, "{0}".format(psr.pdot)])
+                    s = " ".join([s, "{0}".format(psr.dm)])
                     w_ms = psr.width_degree * psr.period / 360.0
                     s = " ".join([s, "{0}".format(w_ms)])
                     s = " ".join([s, "{0}".format(psr.gl)])
