@@ -20,3 +20,4 @@ fortran/compile.txt
 threadpop.py
 build/
 dist/
+run.sh
