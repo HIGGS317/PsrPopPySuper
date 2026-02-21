@@ -7,7 +7,7 @@ dependencies:
   - scipy
   - wxpython
   - gfortran
-  - pytoml
+  - toml
   - scipy
   - pip:
     - enscons

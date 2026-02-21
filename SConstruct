@@ -2,7 +2,7 @@
 
 import sys
 import os
-import pytoml as toml
+import toml as toml
 import enscons
 from SCons.Script import AddOption, Environment, GetOption, Exit
 import glob
