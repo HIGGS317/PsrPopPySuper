@@ -48,9 +48,15 @@ Note mac users should be sure to use a suitable version of gfortran - available 
 An experimental compiling option is available to install everything as a python package, called `psrpoppy`, using
 [`enscons`](https://bitbucket.org/dholth/enscons) (available on PyPi via `pip install enscons`). To compile and install the package system-wide just use:
 
+```Python
+sudo python setup.py install  # For  python <= 3.10
 ```
-sudo python setup.py install
+
+```sh
+scons build
+scons install  # For Python >= 3.11
 ```
+We are trying to port the package to modern build systems
 
 After this you can import the python module with:
 

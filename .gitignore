@@ -21,3 +21,4 @@ threadpop.py
 build/
 dist/
 run.sh
+setup-requires/

@@ -2,7 +2,7 @@ name: Psrpoppy3
 channels:
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.12
   - matplotlib
   - scipy
   - wxpython
