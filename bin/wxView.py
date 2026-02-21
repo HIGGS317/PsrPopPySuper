@@ -97,9 +97,11 @@ class VisualizeFrame(wx.Frame):
         self.radioBoxY.SetStringSelection(self.yIndex)
 
         # event for radio box with ID 1
-        wx.EVT_RADIOBOX(self.panel, 1, self.onXRadioClick)
+        self.radioBoxX.Bind(wx.EVT_RADIOBOX,self.onXRadioClick)
+        # wx.EVT_RADIOBOX(self.panel, 1, self.onXRadioClick) ## depreceated method
         # event for radiobox with ID 2
-        wx.EVT_RADIOBOX(self.panel, 2, self.onYRadioClick)
+        self.radioBoxX.Bind(wx.EVT_RADIOBOX,self.onYRadioClick)
+        # wx.EVT_RADIOBOX(self.panel, 2, self.onYRadioClick)
 
 
         # top horizontal panel - canvas and radio boxes
