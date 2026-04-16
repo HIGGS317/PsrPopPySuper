@@ -52,11 +52,18 @@ def loadModel(popfile='populate.model', popmodel=None):
 def write(surveyPops,
           extension='.results',
           nores=False,
+          asc_extension = '.txt',
           asc=False,
-          summary=False):
+          summary=False,
+          disc = False,
+          disc_ext = '.disc'):
     """Write a survey results population to a binary file."""
 
-    for surv, survpop, detected in surveyPops:
+    for item in surveyPops:
+        surv = item[0]
+        survpop = item[1]
+        detected = item[2]
+        discpop = item[3]
         # create an output file, if required
         if not nores:
             if surv is not None:
@@ -69,7 +76,13 @@ def write(surveyPops,
 
         # Write ascii file if required
         if asc and surv is not None:
-            survpop.write_asc(surv + '.txt')
+            s = ''.join([surv , asc_extension])
+            survpop.write_asc(s)
+        
+        # NEW: Write discoveries-only ascii file if required
+        if disc and surv is not None and discpop is not None:
+            s = ''.join([surv , disc_ext])
+            discpop.write_asc(s)
 
         if summary and surv is not None:
             # Write a summary file for the survey (if true)
@@ -91,7 +104,8 @@ def run(pop,
         allsurveyfile=False,
         scint=False,
         accelsearch=False,
-        jerksearch=False):
+        jerksearch=False,
+        asc_model = None):
 
     """ Run the surveys and detect the pulsars."""
 
@@ -110,6 +124,7 @@ def run(pop,
 
         # create a new population object to store discovered pulsars in
         survpop = Population()
+        discpop = Population() ## Population to store only the discovred pulsars
         # HERE SHOULD INCLUDE THE PROPERTIES OF THE ORIGINAL POPULATION
 
         # counters
@@ -144,6 +159,7 @@ def run(pop,
                     # number of discoveries by the survey
                     psr.detected = True
                     s.discoveries += 1
+                    discpop.population.append(psr)
 
             elif snr == -1.0:
                 nsmear += 1
@@ -167,12 +183,15 @@ def run(pop,
                        nsmear=nsmear,
                        nout=nout,
                        ndisc=s.discoveries)
-        surveyPops.append([surv, survpop, d])
+        surveyPops.append([surv, survpop, d,discpop])
 
     if allsurveyfile:
         allsurvpop = Population()
         allsurvpop.population = [psr for psr in pop.population if psr.detected]
-        surveyPops.append([None, allsurvpop, None])
+        surveyPops.append([None, allsurvpop, None,None])
+    
+    if asc_model:
+        pop.write_asc(asc_model)
 
     return surveyPops
 
@@ -223,6 +242,17 @@ if __name__ == '__main__':
         '--jerk', nargs='?', const=True, default=False,
         help='use accel & jerk search for MSPs (def=False)')
 
+    parser.add_argument(
+        '--disc', nargs='?', const=True,default=False,
+        help='flag to create ascii file containing only discoveries (def=false)'
+    )
+
+    parser.add_argument(
+        '--asc-model', type=str,metavar='ascifile',required=False,
+        default=None,
+        help="Output filename for input ascii population model"
+    )
+
     args = parser.parse_args()
 
     # Load a model population
@@ -235,7 +265,8 @@ if __name__ == '__main__':
                             allsurveyfile=args.allsurveys,
                             scint=args.scint,
                             accelsearch=args.accel,
-                            jerksearch=args.jerk)
+                            jerksearch=args.jerk,
+                            asc_model=args.asc_model)
 
     # write the output files
     write(surveyPopulations,

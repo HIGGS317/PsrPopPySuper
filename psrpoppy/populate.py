@@ -58,7 +58,8 @@ def generate(ngen,
              doubleSpec=[None, None],
              nostdout=False,
              pattern='gaussian',
-             orbits=False):
+             orbits=False,
+             ascfile=None):
 
     """
     Generate a population of pulsars.
@@ -380,6 +381,10 @@ def generate(ngen,
             print("    Number smeared = {0}".format(surv.nsmear))
             print("    Number outside survey area = {0}".format(surv.nout))
 
+
+    if ascfile:
+        pop.write_asc(ascfile)
+
     return pop
 
 
@@ -566,6 +571,10 @@ if __name__ == '__main__':
                         default='populate.model',
                         help='Output filename for population model')
 
+    parser.add_argument('--asc',type=str,metavar='ascfile',required=False,
+                        default=None,
+                        help='Output filename for ASCII population model')
+
     parser.add_argument('--nostdout', nargs='?', const=True, default=False,
                         help='flag to switch off std output (def=False)')
 
@@ -598,7 +607,8 @@ if __name__ == '__main__':
                    gpsArgs=args.gps,
                    doubleSpec=args.doublespec,
                    nostdout=args.nostdout,
-                   orbits=args.orbits
+                   orbits=args.orbits,
+                   ascfile=args.asc
                    )
 
     pop.write(outf=args.o)

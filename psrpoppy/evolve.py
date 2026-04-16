@@ -67,7 +67,8 @@ def generate(ngen,
              efficiencycut=None,
              nostdout=False,
              nospiralarms=False,
-             keepdead=False):
+             keepdead=False,
+             ascfile = None):
 
     pop = Population()
 
@@ -406,6 +407,9 @@ def generate(ngen,
         pop.arguments = cast(Any, {key: value for (key, value) in key_values})
     except SyntaxError:
         pass
+
+    if ascfile:
+        pop.write_asc(ascfile)
 
     return pop
 
@@ -786,6 +790,10 @@ if __name__ == '__main__':
                         default='evolve.model',
                         help='Output filename for population model \
                                (def=evolve.model)')
+    
+    parser.add_argument('--asc',type=str,metavar='outfile',required=False,
+                        default=None,
+                        help="Output filename for ASCII population model")
 
     # turn off printing to stdout
     parser.add_argument('--nostdout', nargs='?', const=True, default=False,
@@ -834,6 +842,7 @@ if __name__ == '__main__':
                    nodeathline=args.nodeathline,
                    efficiencycut=args.eff,
                    nospiralarms=args.nospiralarms,
-                   keepdead=args.keepdead)
+                   keepdead=args.keepdead,
+                   ascfile=args.asc)
 
     pop.write(outf=args.o)
