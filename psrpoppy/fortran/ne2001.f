@@ -747,7 +747,7 @@ c function:
 	if(first) then			! Reconstruct spiral arm axes
 
 c read arm parameters:
-        call mkfile('ne_arms_log_mod.inp',fullname,ip,lip)
+        call mkfile('ne_arms_log_mod_01.inp',fullname,ip,lip)
         open(11,file=fullname,status='old')
 c        open(11, file='ne_arms_log_mod.inp', status='old')
 c       write(6,*) 'ne_arms_log_mod.inp:'
@@ -1106,7 +1106,7 @@ c     parameter (hgc=0.026)
       F_gc = 0.
 
       if(first) then
-        call mkfile('ne_gc.inp',fullname,ip,lip)
+        call mkfile('ne_gc_01.inp',fullname,ip,lip)
         open(11,file=fullname,status='old')
 c        open(11, file='ne_gc.inp', status='old')
           read(11,*)
@@ -1262,7 +1262,7 @@ c other variables:
 	integer wLDR, wLSB, wLHB, wLOOPI
 
 	if(first) then					! read parameters for LISM
-        call mkfile('nelism.inp',fullname,ip,lip)
+        call mkfile('nelism_01.inp',fullname,ip,lip)
         open(11,file=fullname,status='old')
 c	  open(11,file='nelism.inp',status='unknown')
 	  read(11,*)
@@ -2421,4 +2421,28 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 	 endif
  400  continue
 
+      end
+
+      subroutine density_2025(x,y,z,
+     .                ne1,ne2,nea,negc,nelism,necN,nevN,
+     .                F1, F2, Fa, Fgc, Flism, FcN, FvN,
+     .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
+     .                hitclump, hitvoid, wvoid, ip,lip)
+
+      implicit none
+      real x,y,z
+      real ne1,ne2,nea,negc,nelism,necN,nevN
+      real F1, F2, Fa, Fgc, Flism, FcN, FvN
+      integer whicharm,wlism,wLDR,wLHB,wLSB,wLOOPI,hitclump,hitvoid
+      integer wvoid
+      character ip*(*)
+      integer lip
+
+      call density_2001(x,y,z,
+     .                ne1,ne2,nea,negc,nelism,necN,nevN,
+     .                F1, F2, Fa, Fgc, Flism, FcN, FvN,
+     .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
+     .                hitclump, hitvoid, wvoid, ip,lip)
+
+      return
       end

@@ -102,7 +102,7 @@ c voids:
 	integer hitvoid, wvoid
 
 c subroutines needed:
-c	density_2001 (and those that it calls) in density.NE2001.f
+c	density_2025 (and those that it calls) in density.NE2001.f
 c       scattering routines in scattering98.f
 
 	real R0, rrmax, zmax, dmax
@@ -155,7 +155,7 @@ c through read-in of parameter file:
         x = 0.0
         y = R0
         z = 0.0
-            call density_2001(x,y,z,
+            call density_2025(x,y,z,
      .        ne1,ne2,nea,negc,nelism,necN,nevN,
      .        F1val, F2val, Faval, Fgc, Flism, FcN, FvN,
      .        whicharm, wlism, wldr, wlhb, wlsb, wloopI,
@@ -237,7 +237,7 @@ c  routine will work for n_e models with large n_e near the Sun.
      +      (d.gt.dmax.or.abs(z).gt.zmax.or.rr.gt.rrmax)) go to 20
                                                                        
           if(ndir.lt.3) then 
-            call density_2001(x,y,z,
+            call density_2025(x,y,z,
      .        ne1,ne2,nea,negc,nelism,necN,nevN,
      .        F1val, F2val, Faval, Fgc, Flism, FcN, FvN,
      .        whicharm, wlism, wldr, wlhb, wlsb, wloopI,
@@ -245,7 +245,7 @@ c  routine will work for n_e models with large n_e near the Sun.
 	  endif
         
 	  if(ndir.ge.3) then 
-            call density_2001(x+dx0,y+dy0,z+dz0,
+            call density_2025(x+dx0,y+dy0,z+dz0,
      .        ne1,ne2,nea,negc,nelism,necN,nevN,
      .        F1val, F2val, Faval, Fgc, Flism, FcN, FvN,
      .        whicharm, wlism, wldr, wlhb, wlsb, wloopI,
@@ -498,7 +498,7 @@ c density.NE2001.f
 c final version of NE2001
 c returns densities, F parameters and weights of the various components
 
-      SUBROUTINE DENSITY_2001(x,y,z,
+      SUBROUTINE density_2025(x,y,z,
      .                ne1,ne2,nea,negc,nelism,necN,nevN,
      .                F1, F2, Fa, Fgc, Flism, FcN, FvN, 
      .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
@@ -2429,4 +2429,28 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 	 endif
  400  continue
 
+      end
+
+      subroutine density_2001(x,y,z,
+     .                ne1,ne2,nea,negc,nelism,necN,nevN,
+     .                F1, F2, Fa, Fgc, Flism, FcN, FvN,
+     .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
+     .                hitclump, hitvoid, wvoid, ip,lip)
+
+      implicit none
+      real x,y,z
+      real ne1,ne2,nea,negc,nelism,necN,nevN
+      real F1, F2, Fa, Fgc, Flism, FcN, FvN
+      integer whicharm,wlism,wLDR,wLHB,wLSB,wLOOPI,hitclump,hitvoid
+      integer wvoid
+      character ip*(*)
+      integer lip
+
+      call density_2025(x,y,z,
+     .                ne1,ne2,nea,negc,nelism,necN,nevN,
+     .                F1, F2, Fa, Fgc, Flism, FcN, FvN,
+     .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
+     .                hitclump, hitvoid, wvoid, ip,lip)
+
+      return
       end

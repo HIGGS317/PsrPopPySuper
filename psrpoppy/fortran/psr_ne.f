@@ -51,8 +51,9 @@ c        if (dmod.eq.1) write(lout,*) 'BWHV distance model'
 c        if (dmod.eq.2) write(lout,*) 'CWFSR distance model'
 c        if (dmod.eq.3) write(lout,*) 'TC93 distance model'
 c        if (dmod.eq.4) write(lout,*) 'NE2001 distance model'
-c        if (dmod.eq.5) write(lout,*) 'NE0.03 distance model'
-c        if (dmod.eq.6) write(lout,*) 'GBC01 distance model'
+c        if (dmod.eq.5) write(lout,*) 'NE2025 distance model'
+c        if (dmod.eq.6) write(lout,*) 'NE0.03 distance model'
+c        if (dmod.eq.7) write(lout,*) 'GBC01 distance model'
 	write(lout,*)
         first = .false.
       end if
@@ -110,11 +111,19 @@ c
      .                hitclump, hitvoid, wvoid)
             psr_ne=ne1+ne2+nea+negc+nelism+necN+nevN
       else if (dmod.eq.5) then
-c
+
+            call density_2025(x,y,z,
+     .                ne1,ne2,nea,negc,nelism,necN,nevN,
+     .                F1, F2, Fa, Fgc, Flism, FcN, FvN, 
+     .                whicharm, wlism, wLDR, wLHB, wLSB, wLOOPI,
+     .                hitclump, hitvoid, wvoid)
+            psr_ne=ne1+ne2+nea+negc+nelism+necN+nevN
+
+      else if (dmod.eq.6) then
 c     Constant electron density model
 c
          psr_ne = 0.03
-      else if (dmod.eq.6) then
+      else if (dmod.eq.7) then
 c
 c       Calculate n_{e} according to Gomez et al
 c

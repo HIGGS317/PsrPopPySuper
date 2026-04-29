@@ -42,6 +42,12 @@ c
 	  first = .false.
          call dmdsm(l*dr,b*dr,1,dm,distance,limit,s1,s2,s3,s4)
          return
+      else if (mod.eq.5) then
+          if (first) write(lout,*) 'NE2025 distance model'
+          if (first) write(lout,*) 
+	  first = .false.
+         call dmdsm(l*dr,b*dr,1,dm,distance,limit,s1,s2,s3,s4)
+         return
       endif
 c
 c     Main loop, integrate out to given dm

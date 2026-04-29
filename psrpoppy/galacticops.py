@@ -13,8 +13,8 @@ __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
 fortranpath = os.path.join(__libdir__, 'psrpoppy', 'fortran')
 
-#ne2001lib = C.CDLL(os.path.join(fortranpath, 'libne2001.so'))
-#ne2001lib.dm_.restype = C.c_float
+ne2001lib = C.CDLL(os.path.join(fortranpath, 'libne2001.so'))
+ne2001lib.dm_.restype = C.c_float
 
 ne2025lib = C.CDLL(os.path.join(fortranpath, 'libne2025.so'))
 ne2025lib.dm_.restype = C.c_float
@@ -148,7 +148,7 @@ def ne2025_dist_to_dm(dist, gl, gb):
     return ne2025lib.dm_(C.byref(dist),
                          C.byref(gl),
                          C.byref(gb),
-                         C.byref(C.c_int(4)),
+                         C.byref(C.c_int(5)),
                          C.byref(C.c_float(0.0)),
                          C.byref(inpath),
                          C.byref(linpath))

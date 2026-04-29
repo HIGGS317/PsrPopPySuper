@@ -46,6 +46,12 @@ c
          call dmdsm(l*dr,b*dr,-1,dm,dkpc,limit,s1,s2,s3,s4,ip,lip)
          sm = s2 ! return scattering measure
          return
+      else if (dmod.eq.5) then
+          if (first) write(lout,*) 
+	      first = .false.
+         call dmdsm(l*dr,b*dr,-1,dm,dkpc,limit,s1,s2,s3,s4,ip,lip)
+         sm = s2 ! return scattering measure
+         return
       endif
       sm = 0.0
       dmint = 0.0                  ! integrated dm
