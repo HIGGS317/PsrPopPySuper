@@ -1,0 +1,6 @@
+recursive-include psrpoppy/fortran/lookuptables *
+recursive-include psrpoppy/fortran/NE_2001 *
+recursive-include psrpoppy/models *
+recursive-include psrpoppy/surveys *
+recursive-include psrpoppy/fortran *.f *.inc
+include README.md

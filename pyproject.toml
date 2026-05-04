@@ -1,13 +1,3 @@
 [build-system]
-requires = ["enscons"]
-
-[tool.enscons]
-name = "psrpoppy"
-description = "Python implementation of PSRPOP"
-version = "1.0.0"
-author = "Sam Bates"
-author_email = ""
-keywords = ["python", "pulsar"]
-url = "https://github.com/samb8s/PsrPopPy"
-src_root = ""
-packages = ["psrpoppy"]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"

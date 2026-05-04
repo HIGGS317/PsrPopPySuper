@@ -669,8 +669,8 @@ def bhattacharya_deathperiod_92(pulsar):
         pulsar.dead = True
 
 
-if __name__ == '__main__':
-    """ 'Main' function; read in options, then generate population"""
+def main():
+    """Entry point for the evolve console script."""
 
     # set defaults here
     parser = argparse.ArgumentParser(
@@ -846,3 +846,7 @@ if __name__ == '__main__':
                    ascfile=args.asc)
 
     pop.write(outf=args.o)
+
+
+if __name__ == '__main__':
+    main()

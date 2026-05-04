@@ -7,22 +7,24 @@ import random
 
 import ctypes as C
 
+from .fortran import find_library
+
 
 # get the FORTRAN libraries
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
 fortranpath = os.path.join(__libdir__, 'psrpoppy', 'fortran')
 
-ne2001lib = C.CDLL(os.path.join(fortranpath, 'libne2001.so'))
+ne2001lib = C.CDLL(find_library('libne2001'))
 ne2001lib.dm_.restype = C.c_float
 
-ne2025lib = C.CDLL(os.path.join(fortranpath, 'libne2025.so'))
+ne2025lib = C.CDLL(find_library('libne2025'))
 ne2025lib.dm_.restype = C.c_float
 
-slalib = C.CDLL(os.path.join(fortranpath, 'libsla.so'))
-vxyzlib = C.CDLL(os.path.join(fortranpath, 'libvxyz.so'))
+slalib = C.CDLL(find_library('libsla'))
+vxyzlib = C.CDLL(find_library('libvxyz'))
 
-yklib = C.CDLL(os.path.join(fortranpath, 'libykarea.so'))
+yklib = C.CDLL(find_library('libykarea'))
 yklib.ykr_.restype = C.c_float
 yklib.llfr_.restype = C.c_float
 
@@ -98,6 +100,7 @@ def ne2001_dist_to_dm(dist, gl, gb):
     # linpath = C.c_int(len(fortranpath))
     inpath = C.create_string_buffer(fortranpath.encode())
     linpath = C.c_int(len(fortranpath.encode()))
+    # print("NE2001 electron model used")
     return ne2001lib.dm_(C.byref(dist),
                          C.byref(gl),
                          C.byref(gb),
@@ -122,7 +125,6 @@ def lmt85_dist_to_dm(dist, gl, gb):
     # linpath = C.c_int(len(fortranpath))
     inpath = C.create_string_buffer(fortranpath.encode())
     linpath = C.c_int(len(fortranpath.encode()))
-
     return ne2001lib.dm_(C.byref(dist),
                          C.byref(gl),
                          C.byref(gb),
@@ -145,6 +147,7 @@ def ne2025_dist_to_dm(dist, gl, gb):
     # linpath = C.c_int(len(fortranpath))
     inpath = C.create_string_buffer(fortranpath.encode())
     linpath = C.c_int(len(fortranpath.encode()))
+    # print("NE2025 electron model used")
     return ne2025lib.dm_(C.byref(dist),
                          C.byref(gl),
                          C.byref(gb),

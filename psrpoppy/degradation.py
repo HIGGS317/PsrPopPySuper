@@ -4,12 +4,13 @@ import os
 
 import ctypes as C
 
+from .fortran import find_library
+
 # get the FORTRAN libraries
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
-fortranpath = os.path.join(__libdir__, 'psrpoppy', 'fortran')
 
-gammalib = C.CDLL(os.path.join(fortranpath, 'libgamma.so'))
+gammalib = C.CDLL(find_library('libgamma'))
 gammalib.gamma1_.restype = C.c_double
 gammalib.gamma2_.restype = C.c_double
 gammalib.gamma3_.restype = C.c_double

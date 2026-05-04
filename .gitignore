@@ -1,9 +1,4 @@
 .sconsign.dblite
-PMSURV.results
-populate.model
-populate.cmd
-evolve.model
-evolve.cmd
 junk
 weff
 junk.py
@@ -22,3 +17,5 @@ build/
 dist/
 run.sh
 setup-requires/
+psrpoppy.egg-info/
+*.json

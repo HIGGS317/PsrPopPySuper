@@ -7,16 +7,17 @@ import math
 
 import ctypes as C
 
+from .fortran import find_library
+
 # get the FORTRAN libraries
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
-filepath = os.path.join(__libdir__, 'psrpoppy', 'fortran')
 
-yklib = C.CDLL(filepath+'/libykarea.so')
+yklib = C.CDLL(find_library('libykarea'))
 yklib.ykr_.restype = C.c_float
 yklib.llfr_.restype = C.c_float
 
-seedlib = C.CDLL(filepath+'/libgetseed.so')
+seedlib = C.CDLL(find_library('libgetseed'))
 seedlib.getseed_.restype = C.c_int
 
 def seed():

@@ -196,10 +196,9 @@ def run(pop,
     return surveyPops
 
 
-if __name__ == '__main__':
-    """ 'Main' function; read in options, then survey the population"""
+def main():
+    """Entry point for the dosurvey console script."""
     # Parse command line arguments
-
     parser = argparse.ArgumentParser(
         description='Run a survey on your population model')
     parser.add_argument(
@@ -273,3 +272,7 @@ if __name__ == '__main__':
           nores=args.noresults,
           asc=args.asc,
           summary=args.summary)
+
+
+if __name__ == '__main__':
+    main()

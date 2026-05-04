@@ -485,8 +485,8 @@ def _sindegree(angle):
     return math.sin(math.radians(angle))
 
 
-if __name__ == '__main__':
-    """ 'Main' function; read in options, then generate population"""
+def main():
+    """Entry point for the populate console script."""
 
     # set defaults here
     parser = argparse.ArgumentParser(
@@ -612,3 +612,7 @@ if __name__ == '__main__':
                    )
 
     pop.write(outf=args.o)
+
+
+if __name__ == '__main__':
+    main()
