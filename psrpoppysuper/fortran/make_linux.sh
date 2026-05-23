@@ -9,5 +9,6 @@ $gf -shared -o libne2025.so -fno-second-underscore ne2025.o dm.o psr_ne.o dist.o
 $gf -shared -o libykarea.so -fno-second-underscore ykarea.o psrran.o
 $gf -shared -o libsla.so -fno-second-underscore galtfeq.o sla.o
 $gf -shared -o libvxyz.so -fno-second-underscore vxyz.o rkqc.o rk4.o
+$gf -dynamiclib -o libgamma.so -fno-second-underscore gamma.o
 
 rm *.o
