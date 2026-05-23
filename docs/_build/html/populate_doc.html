@@ -1,39 +1,27 @@
+<!DOCTYPE html>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en" data-content_root="./">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>populate.py &#8212; PsrPopPy 1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=2bf1fcf8" />
     
-    <title>populate.py &mdash; PsrPopPy 1 documentation</title>
+    <script src="_static/documentation_options.js?v=29a6c3e3"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '',
-        VERSION:     '1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="PsrPopPy 1 documentation" href="index.html" /> 
-  </head>
-  <body>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
 
 <div style="background-color: white; text-align: left; padding: 10px 10px 15px 15px">
 <a href="index.html"><img src="_static/logo2.png" border="0" alt="py4sci"/></a>
 </div>
 
-    <div class="related">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -44,136 +32,143 @@
              >modules</a> |</li>
         <li><a href="index.html">home</a>|&nbsp;</li>
         <li><a href="search.html">search</a>|&nbsp;</li>
- 
+
+        <li class="nav-item nav-item-this"><a href="">populate.py</a></li> 
       </ul>
     </div>
 
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/populate_doc.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/populate_doc.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="populate-py">
-<h1>populate.py<a class="headerlink" href="#populate-py" title="Permalink to this headline">¶</a></h1>
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-n">
-<tt class="descname">-n</tt><tt class="descclassname"> &lt;number of pulsars&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-n" title="Permalink to this definition">¶</a></dt>
+  <section id="populate-py">
+<h1>populate.py<a class="headerlink" href="#populate-py" title="Link to this heading">¶</a></h1>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-n">
+<span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;number</span> <span class="pre">of</span> <span class="pre">pulsars&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-n" title="Link to this definition">¶</a></dt>
 <dd><p>Required: Number of pulsars to generate; or to detect in a survey</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-o">
-<tt class="descname">-o</tt><tt class="descclassname"> &lt;output&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-o" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-o">
+<span class="sig-name descname"><span class="pre">-o</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;output&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-o" title="Link to this definition">¶</a></dt>
 <dd><p>Output file name for population model (def=populate.model)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-surveys">
-<tt class="descname">-surveys</tt><tt class="descclassname"> &lt;SURVEY NAME(S)&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-surveys" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-asc">
+<span class="sig-name descname"><span class="pre">-asc</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;ascii</span> <span class="pre">output</span> <span class="pre">file</span> <span class="pre">name&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-asc" title="Link to this definition">¶</a></dt>
+<dd><p>Output file name for ascii output file (def=populate.txt)</p>
+</dd></dl>
+
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-surveys">
+<span class="sig-name descname"><span class="pre">-surveys</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;SURVEY</span> <span class="pre">NAME(S)&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-surveys" title="Link to this definition">¶</a></dt>
 <dd><p>List of surveys to use when trying to detect pulsars (default=None)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-z">
-<tt class="descname">-z</tt><tt class="descclassname"> &lt;scale height&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-z" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-z">
+<span class="sig-name descname"><span class="pre">-z</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;scale</span> <span class="pre">height&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-z" title="Link to this definition">¶</a></dt>
 <dd><p>Scale height of pulsars about Galactic plane, in kpc (default=0.33)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-w">
-<tt class="descname">-w</tt><tt class="descclassname"> &lt;width&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-w" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-w">
+<span class="sig-name descname"><span class="pre">-w</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;width&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-w" title="Link to this definition">¶</a></dt>
 <dd><p>Pulse width to use when generating pulsars (default=0, use beaming model)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-si">
-<tt class="descname">-si</tt><tt class="descclassname"> &lt;SImean SIsigma&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-si" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-si">
+<span class="sig-name descname"><span class="pre">-si</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;SImean</span> <span class="pre">SIsigma&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-si" title="Link to this definition">¶</a></dt>
 <dd><p>Spectral index mean and standard deviation (default=-1.6, 0.35)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-sc">
-<tt class="descname">-sc</tt><tt class="descclassname"> &lt;scatter index&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-sc" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-sc">
+<span class="sig-name descname"><span class="pre">-sc</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;scatter</span> <span class="pre">index&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-sc" title="Link to this definition">¶</a></dt>
 <dd><p>Spectral index of scattering law to use (default=-3.86, Bhat et al model)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-pdist">
-<tt class="descname">-pdist</tt><tt class="descclassname"> &lt;distribution name&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-pdist" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-pdist">
+<span class="sig-name descname"><span class="pre">-pdist</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;distribution</span> <span class="pre">name&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-pdist" title="Link to this definition">¶</a></dt>
 <dd><p>Distribution type for pulse periods (default=lnorm)</p>
-<p>Supported: &#8216;lnorm&#8217;, &#8216;norm&#8217;, &#8216;cc97&#8217;</p>
+<p>Supported: ‘lnorm’, ‘norm’, ‘cc97’</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-p">
-<tt class="descname">-p</tt><tt class="descclassname"> &lt;mean stddev&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-p" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mean and standard deviation to use in period dist &#8216;lnorm&#8217; or &#8216;norm&#8217; (def=-2.7, 0.34)</p>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-p">
+<span class="sig-name descname"><span class="pre">-p</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;mean</span> <span class="pre">stddev&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-p" title="Link to this definition">¶</a></dt>
+<dd><p>Mean and standard deviation to use in period dist ‘lnorm’ or ‘norm’ (def=-2.7, 0.34)</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-rdist">
-<tt class="descname">-rdist</tt><tt class="descclassname"> &lt;radial model&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-rdist" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-rdist">
+<span class="sig-name descname"><span class="pre">-rdist</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;radial</span> <span class="pre">model&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-rdist" title="Link to this definition">¶</a></dt>
 <dd><p>Model to use for Galactic radial distribution of pulsars</p>
-<p>Supported: &#8216;lfl06&#8217;, &#8216;yk04&#8217;, &#8216;isotropic&#8217;, &#8216;slab&#8217;, &#8216;disk&#8217;</p>
+<p>Supported: ‘lfl06’, ‘yk04’, ‘isotropic’, ‘slab’, ‘disk’</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-dm">
-<tt class="descname">-dm</tt><tt class="descclassname"> &lt;Electron model&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-dm" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-dm">
+<span class="sig-name descname"><span class="pre">-dm</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;Electron</span> <span class="pre">model&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-dm" title="Link to this definition">¶</a></dt>
 <dd><p>Model to describe the Galactic electron distribution</p>
-<p>Supported: &#8216;ne2001&#8217;, &#8216;lm98&#8217;</p>
+<p>Supported: ‘ne2025’, ‘lm98’, ‘ne2001’</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-gps">
-<tt class="descname">-gps</tt><tt class="descclassname"> &lt;fraction 'a'&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-gps" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-gps">
+<span class="sig-name descname"><span class="pre">-gps</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;fraction</span> <span class="pre">'a'&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-gps" title="Link to this definition">¶</a></dt>
 <dd><p>Add &lt;fraction&gt; pulsars with GHz-frequency turnovers with index a</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py-doublespec">
-<tt class="descname">-doublespec</tt><tt class="descclassname"> &lt;fraction alpha1&gt;</tt><a class="headerlink" href="#cmdoption-populate.py-doublespec" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-doublespec">
+<span class="sig-name descname"><span class="pre">-doublespec</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;fraction</span> <span class="pre">alpha1&gt;</span></span><a class="headerlink" href="#cmdoption-populate.py-doublespec" title="Link to this definition">¶</a></dt>
 <dd><p>Add &lt;fraction&gt; pulsars with low-frequency (below 1GHz) spectral index of alpha1</p>
 </dd></dl>
 
-<dl class="cmdoption">
-<dt id="cmdoption-populate.py--nostdout">
-<tt class="descname">--nostdout</tt><tt class="descclassname"></tt><a class="headerlink" href="#cmdoption-populate.py--nostdout" title="Permalink to this definition">¶</a></dt>
+<dl class="std cmdoption">
+<dt class="sig sig-object std" id="cmdoption-populate.py-nostdout">
+<span class="sig-name descname"><span class="pre">--nostdout</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-populate.py-nostdout" title="Link to this definition">¶</a></dt>
 <dd><p>Turn off writing to stdout. Useful for many iterations eg. in large simulations</p>
 </dd></dl>
 
-</div>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -184,12 +179,13 @@
              >modules</a> |</li>
         <li><a href="index.html">home</a>|&nbsp;</li>
         <li><a href="search.html">search</a>|&nbsp;</li>
- 
+
+        <li class="nav-item nav-item-this"><a href="">populate.py</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2012, S Bates.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2012, S Bates.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
     </div>
   </body>
 </html>

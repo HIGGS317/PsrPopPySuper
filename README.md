@@ -37,28 +37,50 @@ pulsar is then scaled up or down using the modulation index.
 Compiling
 ---------
 
-I've just incorporated a real makefile for the first time - be sure to edit `makefile.linux` or `makefile.darwin` as appropriate to point to the correct location of your gfortran compiler. After that, it should be as simple as typing `make`.
+The package now supports automatic Fortran compilation during installation.
+Simply run::
 
-If this fails, try using the scripts. Inside the lib/fortran directory, edit `make_mac.csh` or `make_linux.csh` (as appropriate) -- change the variable `gf' to point to your local gfortran compiler, then run the script. Fingers crossed, it should all work.
+  pip install .
 
-Note mac users should be sure to use a suitable version of gfortran - available from http://gcc.gnu.org/wiki/GFortranBinaries
+This will automatically compile the Fortran libraries using gfortran and install
+the package. Make sure gfortran is installed on your system first.
 
-### Compiling using `enscons`
+For manual compilation (legacy method), see the documentation.
 
-An experimental compiling option is available to install everything as a python package, called `psrpoppy`, using
-[`enscons`](https://bitbucket.org/dholth/enscons) (available on PyPi via `pip install enscons`). To compile and install the package system-wide just use:
+## Installation
 
-```Python
-sudo python setup.py install  # For  python <= 3.10
+```bash
+git clone https://github.com/HIGGS317/PsrPopPySuper
+cd PsrPopPySuper
+pip install .
 ```
 
-```sh
-scons build
-scons install  # For Python >= 3.11
-```
-We are trying to port the package to modern build systems
+### Prerequisites
 
-After this you can import the python module with:
+- Python 3.8+
+- gfortran compiler
+
+On macOS::
+
+  brew install gcc
+
+On Linux::
+
+  sudo apt-get install gfortran  # Ubuntu/Debian
+  sudo yum install gcc-gfortran   # CentOS/RHEL
+```
+```bash
+cd PsrPoPySuper
+```
+
+Use the [environment.yml](environment.yml) to make the conda environment and activate it
+
+```bash
+pip install -e .
+```
+
+
+## Usage
 
 ```python
 import psrpoppy
@@ -82,7 +104,7 @@ pop = populate.generate(1038,
 Usage
 =====
 
-If not installing the package via `enscons` I'd recommend adding the `psrpoppy` directory to your PYTHONPATH and adding the `bin` directory to your PATH. This should then leave you set up to run the code from wherever you like.
+If not installing the package via `pip install .` I'd recommend adding the `psrpoppy` directory to your PYTHONPATH and adding the `bin` directory to your PATH. This should then leave you set up to run the code from wherever you like.
 
 
 A brief description of the "executables" follows.

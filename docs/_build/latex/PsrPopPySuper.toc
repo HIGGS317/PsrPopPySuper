@@ -1,0 +1,27 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Installation}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Download the package}{5}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Installing the package}{5}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Prerequisites}{5}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Installation}{5}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Legacy Fortran Compilation (if needed)}{6}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Command\sphinxhyphen {}line scripts}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}populate.py}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}dosurvey.py}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}view.py}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}visualize.py}{8}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Tutorial \sphinxhyphen {} Basic Usage}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Generate Population Model}{9}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Simulate a Pulsar Survey}{9}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Visualising a Pulsar Model}{9}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Module\sphinxhyphen {}level Documentation}{11}{chapter.5}%
+\contentsline {section}{\numberline {5.1}\sphinxstyleliteralintitle {\sphinxupquote {pulsar}} \textendash {} Creates/stores a pulsar object}{11}{section.5.1}%
+\contentsline {section}{\numberline {5.2}\sphinxstyleliteralintitle {\sphinxupquote {population}} \textendash {} Creates/stores a population}{11}{section.5.2}%
+\contentsline {section}{\numberline {5.3}\sphinxstyleliteralintitle {\sphinxupquote {survey}} \textendash {} Read a survey file into a survey object}{12}{section.5.3}%
+\contentsline {section}{\numberline {5.4}\sphinxstyleliteralintitle {\sphinxupquote {populate}} \textendash {} Create a population object}{12}{section.5.4}%
+\contentsline {section}{\numberline {5.5}\sphinxstyleliteralintitle {\sphinxupquote {radialmodels}} \textendash {} Container for radial distn models}{12}{section.5.5}%
+\contentsline {section}{\numberline {5.6}{\hyperref [module-level-docs:module-galacticops]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {galacticops}}}}} \textendash {} Container for functions relating to the Galaxy}{13}{section.5.6}%
+\contentsline {chapter}{\numberline {6}Indices and tables}{15}{chapter.6}%
+\contentsline {chapter}{Python Module Index}{17}{section*.70}%
+\contentsline {chapter}{Index}{19}{section*.71}%

@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from psrpoppy import population, pulsar
+from psrpoppysuper import population, pulsar
 import sys
 import pickle
 

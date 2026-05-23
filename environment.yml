@@ -9,6 +9,4 @@ dependencies:
   - gfortran
   - toml
   - scipy
-  - pip:
-    - enscons
 

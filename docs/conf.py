@@ -13,6 +13,9 @@
 
 import sys, os
 
+# Ensure project root is on sys.path so autodoc can import `psrpoppy`
+sys.path.insert(0, os.path.abspath('..'))
+
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
@@ -25,7 +28,13 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.todo', 'sphinx.ext.pngmath', 'sphinx.ext.viewcode', 'sphinx.ext.mathbase']
+extensions = [
+  'sphinx.ext.autodoc',
+  'sphinx.ext.doctest',
+  'sphinx.ext.todo',
+  'sphinx.ext.viewcode',
+  'sphinx.ext.mathjax',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -40,8 +49,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'PsrPopPy'
-copyright = u'2012, S Bates'
+project = u'PsrPopPySuper'
+copyright = u'2026, D Tripathi'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -183,8 +192,8 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'PsrPopPy.tex', u'PsrPopPy Documentation',
-   u'S Bates', 'manual'),
+  ('index', 'PsrPopPySuper.tex', u'PsrPopPySuper Documentation',
+   u'D Tripathi', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -213,8 +222,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'psrpoppy', u'PsrPopPy Documentation',
-     [u'S Bates'], 1)
+    ('index', 'psrpoppysuper', u'PsrPopPySuper Documentation',
+     [u'D Tripathi'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -227,8 +236,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'PsrPopPy', u'PsrPopPy Documentation',
-   u'S Bates', 'PsrPopPy', 'One line description of project.',
+  ('index', 'PsrPopPySuper', u'PsrPopPySuper Documentation',
+   u'D Tripathi', 'PsrPopPySuper', 'One line description of project.',
    'Miscellaneous'),
 ]
 

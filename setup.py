@@ -9,7 +9,7 @@ from setuptools import find_packages, setup
 from setuptools.command.build_py import build_py as _build_py
 
 HERE = Path(__file__).resolve().parent
-PKG_NAME = "psrpoppy"
+PKG_NAME = "PsrPopPySuper"
 FORTRAN_DIR = HERE / PKG_NAME / "fortran"
 
 LIBRARIES = {
@@ -84,16 +84,16 @@ def read_long_description():
 
 
 setup(
-    name="psrpoppy",
+    name="PsrPopPySuper",
     version="1.0.0",
-    description="Python implementation of PSRPOP",
+    description="Python3 port of PsrPopPy",
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
-    author="Sam Bates",
+    author="Divyansh Tripathi",
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        "psrpoppy": [
+        "psrpoppysuper": [
             "fortran/**",
             "models/**",
             "surveys/**",
@@ -102,9 +102,9 @@ setup(
     install_requires=["numpy"],
     entry_points={
         "console_scripts": [
-            "dosurvey=psrpoppy.dosurvey:main",
-            "populate=psrpoppy.populate:main",
-            "evolve=psrpoppy.evolve:main",
+            "dosurvey=psrpoppysuper.dosurvey:main",
+            "populate=psrpoppysuper.populate:main",
+            "evolve=psrpoppysuper.evolve:main",
         ]
     },
     python_requires=">=3.8",
