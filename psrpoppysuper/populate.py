@@ -170,7 +170,7 @@ def generate(ngen,
                            mode='dynamic')
 
     # create survey objects here and put them in a list
-    if surveyList is not None:
+    if surveyList:
         surveys = [Survey(s, pattern) for s in surveyList]
         # initialise these counters to zero
         for surv in surveys:
@@ -315,7 +315,7 @@ def generate(ngen,
             print(p.gb, p.gl)
 
         # if no surveys, just generate ngen pulsars
-        if surveyList is None:
+        if not surveyList:
             pop.population.append(p)
             pop.ndet += 1
             if not nostdout:
@@ -372,7 +372,7 @@ def generate(ngen,
         print("\n")
         print("  Total pulsars = {0}".format(len(pop.population)))
         print("  Total detected = {0}".format(pop.ndet))
-        # print "  Number not beaming = {0}".format(surv.nnb)
+        # print("  Number not beaming = {0}".format(surv.nnb))
 
         for surv in surveys:
             print("\n  Results for survey '{0}'".format(surv.surveyName))
@@ -381,6 +381,9 @@ def generate(ngen,
             print("    Number smeared = {0}".format(surv.nsmear))
             print("    Number outside survey area = {0}".format(surv.nout))
 
+    # Write the global population to a file.
+    # Comment out the line below to NOT write the global population.
+    pop.write(outf='populate.model')
 
     if ascfile:
         pop.write_asc(ascfile)
@@ -611,7 +614,7 @@ def main():
                    ascfile=args.asc
                    )
 
-    pop.write(outf=args.o)
+    # pop.write(outf=args.o)
 
 
 if __name__ == '__main__':

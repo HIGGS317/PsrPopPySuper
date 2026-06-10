@@ -142,7 +142,7 @@ def generate(ngen,
                            mode='dynamic')
 
     # create survey objects here and put them in a list
-    if surveyList is not None:
+    if surveyList:
         surveys = [Survey(s) for s in surveyList]
     else:
         # make an empty list here - makes some code just a little
@@ -313,7 +313,7 @@ def generate(ngen,
 
             # if surveys are given, check if pulsar detected or not
             # in ANY of the surveys
-            if surveyList is not None:
+            if surveyList:
                 detect_int = 0  # just a flag if pulsar is detected
                 for surv in surveys:
                     SNR = surv.SNRcalc(pulsar, pop)
@@ -365,15 +365,8 @@ def generate(ngen,
             pop.population.append(pulsar)
 
         else:
-            # pulsar is dead. If no survey list,
-            # just increment number of pulsars
-            if surveyList is None:
-                pop.ndet += 1
-                # update the counter
-                if not nostdout:
-                    prog.increment_amount()
-                    print(prog, '\r', end=' ')
-                    sys.stdout.flush()
+            # pulsar is dead.
+            pass
 
     if not nostdout:
         print("\n\n")
@@ -386,6 +379,10 @@ def generate(ngen,
             print("    Number too faint = {0}".format(surv.ntf))
             print("    Number smeared = {0}".format(surv.nsmear))
             print("    Number outside survey area = {0}".format(surv.nout))
+
+    # Write the global population to a file.
+    # Comment out the line below to NOT write the global population.
+    pop.write(outf='evolve.model')
 
     # save list of arguments into the pop
     # try:
@@ -845,7 +842,7 @@ def main():
                    keepdead=args.keepdead,
                    ascfile=args.asc)
 
-    pop.write(outf=args.o)
+    # pop.write(outf=args.o)
 
 
 if __name__ == '__main__':

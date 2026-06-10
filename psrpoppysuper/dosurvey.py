@@ -13,6 +13,7 @@ try:
     from .pulsar import Pulsar
     from .survey import Survey
 except ImportError:
+    
     try:
         # import from the installed package
         from psrpoppysuper.population import Population
@@ -73,6 +74,7 @@ def write(surveyPops,
             else:
                 s = 'allsurveys.results'
                 survpop.write(s)
+                survpop.write_asc('allsurveys.txt')
 
         # Write ascii file if required
         if asc and surv is not None:
@@ -105,7 +107,8 @@ def run(pop,
         scint=False,
         accelsearch=False,
         jerksearch=False,
-        asc_model = None):
+        asc_model = None,
+        noresults=False):
 
     """ Run the surveys and detect the pulsars."""
 
@@ -193,6 +196,11 @@ def run(pop,
     if asc_model:
         pop.write_asc(asc_model)
 
+    # Write the local population to a file.
+    # Comment out the line below to NOT write the local population.
+    if not noresults:
+        write(surveyPops)
+
     return surveyPops
 
 
@@ -265,13 +273,14 @@ def main():
                             scint=args.scint,
                             accelsearch=args.accel,
                             jerksearch=args.jerk,
-                            asc_model=args.asc_model)
+                            asc_model=args.asc_model,
+                            noresults=args.noresults)
 
     # write the output files
-    write(surveyPopulations,
-          nores=args.noresults,
-          asc=args.asc,
-          summary=args.summary)
+     # write(surveyPopulations,
+    #       nores=args.noresults,
+    #       asc=args.asc,
+    #       summary=args.summary)
 
 
 if __name__ == '__main__':
