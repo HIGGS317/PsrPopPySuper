@@ -14,6 +14,7 @@ from .fortran import find_library
 __dir__ = os.path.dirname(os.path.abspath(__file__))
 __libdir__ = os.path.dirname(__dir__)
 fortranpath = os.path.join(__libdir__, 'psrpoppysuper', 'fortran')
+cpath = os.path.join(__libdir__, 'psrpoppysuper', 'fortran', 'ymw16')
 
 ne2001lib = C.CDLL(find_library('libne2001'))
 ne2001lib.dm_.restype = C.c_float
@@ -27,6 +28,21 @@ vxyzlib = C.CDLL(find_library('libvxyz'))
 yklib = C.CDLL(find_library('libykarea'))
 yklib.ykr_.restype = C.c_float
 yklib.llfr_.restype = C.c_float
+
+
+ymw16lib = C.CDLL(find_library('libymw16'))
+ymw16lib.dmdtau_value.argtypes = [
+    C.c_double,            # gl
+    C.c_double,            # gb
+    C.c_double,            # dordm
+    C.c_double,            # DM_Host
+    C.c_int,               # ndir
+    C.c_int,               # np
+    C.c_int,               # vbs
+    C.c_char_p,            # dirname
+    C.POINTER(C.c_double)  # tau_sc_out
+]
+ymw16lib.dmdtau_value.restype = C.c_double
 
 # BEGIN FUNCTION DEFINITIONS
 
@@ -110,28 +126,28 @@ def ne2001_dist_to_dm(dist, gl, gb):
                          C.byref(linpath))
 
 
-def lmt85_dist_to_dm(dist, gl, gb):
-    """ Use Lyne, Manchester & Taylor distance model to compute DM."""
-    dist = C.c_float(dist)
-    gl = C.c_float(gl)
-    gb = C.c_float(gb)
-    # passing path to fortran dir and the length of
-    # this path --- removes need to edit getpath.f
-    # during installation
-    # create_string_buffer expects a bytes object (or an integer size).
-    # Encode the path to bytes before passing it to ctypes.
-    # Old (Python 2) behaviour -- left here commented for tracking:
-    # inpath = C.create_string_buffer(fortranpath)
-    # linpath = C.c_int(len(fortranpath))
-    inpath = C.create_string_buffer(fortranpath.encode())
-    linpath = C.c_int(len(fortranpath.encode()))
-    return ne2001lib.dm_(C.byref(dist),
-                         C.byref(gl),
-                         C.byref(gb),
-                         C.byref(C.c_int(0)),
-                         C.byref(C.c_float(0.0)),
-                         C.byref(inpath),
-                         C.byref(linpath))
+# def lmt85_dist_to_dm(dist, gl, gb):
+#     """ Use Lyne, Manchester & Taylor distance model to compute DM."""
+#     dist = C.c_float(dist)
+#     gl = C.c_float(gl)
+#     gb = C.c_float(gb)
+#     # passing path to fortran dir and the length of
+#     # this path --- removes need to edit getpath.f
+#     # during installation
+#     # create_string_buffer expects a bytes object (or an integer size).
+#     # Encode the path to bytes before passing it to ctypes.
+#     # Old (Python 2) behaviour -- left here commented for tracking:
+#     # inpath = C.create_string_buffer(fortranpath)
+#     # linpath = C.c_int(len(fortranpath))
+#     inpath = C.create_string_buffer(fortranpath.encode())
+#     linpath = C.c_int(len(fortranpath.encode()))
+#     return ne2001lib.dm_(C.byref(dist),
+#                          C.byref(gl),
+#                          C.byref(gb),
+#                          C.byref(C.c_int(0)),
+#                          C.byref(C.c_float(0.0)),
+#                          C.byref(inpath),
+#                          C.byref(linpath))
 
 def ne2025_dist_to_dm(dist, gl, gb):
     """Use NE2001 distance model."""
@@ -155,6 +171,132 @@ def ne2025_dist_to_dm(dist, gl, gb):
                          C.byref(C.c_float(0.0)),
                          C.byref(inpath),
                          C.byref(linpath))
+
+def ymw16_dist_to_dm(dist, gl, gb, mode='gal'):
+    """Use YMW16 distance model to compute DM."""
+    mode_lower = mode.lower()
+    if mode_lower == 'gal':
+        np_val = 1
+    elif mode_lower == 'mc':
+        np_val = 0
+    elif mode_lower == 'igm':
+        np_val = -1
+    else:
+        np_val = 1
+
+    # YMW16 expects distance in pc; the rest of PsrPopPy uses kpc
+    dist_pc = dist * 1000.0
+
+    tau_sc = C.c_double(0.0)
+    dm = ymw16lib.dmdtau_value(
+        C.c_double(gl),
+        C.c_double(gb),
+        C.c_double(dist_pc),
+        C.c_double(0.0),
+        C.c_int(2), # Dist -> DM
+        C.c_int(np_val),
+        C.c_int(0), # verbose
+        cpath.encode(),
+        C.byref(tau_sc)
+    )
+    return dm
+
+
+def ymw16_dm_to_dist(dm, gl, gb, mode='gal'):
+    """Use YMW16 distance model to compute distance."""
+    mode_lower = mode.lower()
+    if mode_lower == 'gal':
+        np_val = 1
+    elif mode_lower == 'mc':
+        np_val = 0
+    elif mode_lower == 'igm':
+        np_val = -1
+    else:
+        np_val = 1
+
+    tau_sc = C.c_double(0.0)
+    dist_pc = ymw16lib.dmdtau_value(
+        C.c_double(gl),
+        C.c_double(gb),
+        C.c_double(dm),
+        C.c_double(0.0),
+        C.c_int(1), # DM -> Dist
+        C.c_int(np_val),
+        C.c_int(0), # verbose
+        cpath.encode(),
+        C.byref(tau_sc)
+    )
+    # YMW16 returns distance in pc; convert to kpc
+    return dist_pc / 1000.0
+
+
+def ymw16_get_smtau(dist, gl, gb):
+    """Get scattering measure and scattering timescale from YMW16 model.
+
+    YMW16 computes tau_sc at 1 GHz from an empirical DM-tau relation:
+        tau_sc = 4.1e-11 * DM^2.2 * (1 + 0.00194 * DM^2)
+    This is returned as smtau.
+
+    SM is not computed natively by YMW16 (unlike NE2001/NE2025 which
+    integrate C_n^2 along the line of sight). Instead we back-derive
+    an effective SM from tau_sc using the diffractive scintillation
+    uncertainty relation at 1 GHz:
+        scint_bw (MHz) = 1.16 / (2 * pi * tau_sc_sec)
+        SM = (223 / (scint_bw * dist))^(1/1.2)
+    (Cordes & Lazio 1991, eqns 46 & 48, evaluated at 1 GHz.)
+    """
+    # YMW16 expects distance in pc; the rest of PsrPopPy uses kpc
+    # This is one possible solution, can have bugs, please let me know if you find any
+    # or have anu ideas for some other implementation.
+    dist_pc = dist * 1000.0
+
+    tau_sc = C.c_double(0.0)
+    ymw16lib.dmdtau_value(
+        C.c_double(gl),
+        C.c_double(gb),
+        C.c_double(dist_pc),  # distance in pc
+        C.c_double(0.0),      # DM_Host
+        C.c_int(2),           # ndir=2: Dist -> DM
+        C.c_int(1),           # np=1: Galactic
+        C.c_int(0),           # vbs=0: quiet
+        cpath.encode(),
+        C.byref(tau_sc)
+    )
+
+    smtau_val = tau_sc.value  # scattering timescale at 1 GHz (seconds)
+
+    # Back-derive an effective SM from tau_sc.
+    # At 1 GHz (freq/1000 = 1), from Cordes & Lazio eqn 48:
+    #   scint_bw = 223 * SM^{-1.2} / dist
+    # And from the uncertainty relation:
+    #   scint_bw = 1.16 / (2 * pi * tau_sc)   [MHz, when tau_sc in seconds]
+    # Equating:
+    #   223 * SM^{-1.2} / dist = 1.16 / (2 * pi * tau_sc)
+    #   SM^{-1.2} = 1.16 / (2 * pi * tau_sc * 223 * dist)  (dist invalid if 0)
+    #   SM = (2 * pi * tau_sc * 223 * dist / 1.16)^{1/1.2}
+    if smtau_val > 0. and dist > 0.:
+        sm_val = (2.0 * math.pi * smtau_val * 223.0 * dist / 1.16) ** (1.0 / 1.2)
+    else:
+        sm_val = 0.0
+
+    return sm_val, smtau_val
+
+
+def ymw16_scint_time_bw(dist, gl, gb, freq):
+    """Compute scintillation timescale and bandwidth using YMW16 model."""
+    sm, smtau = ymw16_get_smtau(dist, gl, gb)
+    if smtau <= 0.:
+        scint_time = None
+    else:
+        # reference: eqn (46) of Cordes & Lazio 1991, ApJ, 376, 123
+        scint_time = 3.3 * (freq/1000.)**1.2 * smtau**(-0.6)
+    if sm <= 0.:
+        scint_bw = None
+    else:
+        # eqn 48
+        scint_bw = 223. * (freq/1000.)**4.4 * sm**(-1.2) / dist
+
+    return scint_time, scint_bw
 
 
 def ne2001_get_smtau(dist, gl, gb):
@@ -192,7 +334,7 @@ def ne2001_get_smtau(dist, gl, gb):
     return sm.value, smtau.value
 
 def ne2025_get_smtau(dist, gl, gb):
-    """Use NE2001 model to get the DISS scattering timescale"""
+    """Use NE2025 model to get the DISS scattering timescale"""
     dist = C.c_float(dist)
 
     # gl gb need to be in radians

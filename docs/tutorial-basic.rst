@@ -24,14 +24,35 @@ has detected 1038 pulsars. The file ``populate.model`` will be produced
 by default, which is a `pickled <http://docs.python.org/library/pickle.html>`_
 population object.
 
-If, instead, you wanted to use the Lyne & Manchester (1998) electron
-distribution, and for whatever reason wanted to store the output in the
-file ``pop_lm98.model``, then we could run::
+.. _evolve_population:
 
-  populate -n 1038 -surveys PMSURV -dm lm98 -o pop_lm98.model
+Evolve a Population Model
+=========================
+The ``evolve`` script takes a snapshot-style population model and evolves
+it according to the Ridley & Lorimer pulsar evolution method. This is
+useful when you want to generate a more realistic, age-dependent
+population before passing it on to a survey simulation.
 
-A different output file will then be produced, where the population uses
-the new simulation parameters.
+A basic usage example is::
+
+  evolve -n 1000 -surveys PMSURV -dm ne2025 -o evolve.model
+
+This command will generate an evolved population of pulsars
+using the NE2025 electron density model. The output file
+``evolve.model`` can then be used by ``dosurvey`` or visualised with
+``view.py``.
+
+The evolve script also supports the same survey and population controls as
+``populate``, including pulse width, beaming, spin-down, and electron
+model options. For example, to use a fixed 5% pulse width and the WJ08
+alignment model, run::
+
+  evolve -n 1000 -surveys PMSURV -w 5.0 -alignmodel wj08 -o evolve.model
+
+If you only want to generate the evolved population without checking a
+survey, omit the ``-surveys`` option and use the output file directly:
+
+  evolve -n 1000 -dm ne2025 -o evolve.model
 
 .. _simulate_survey:
 
@@ -43,10 +64,10 @@ survey (as specified in files in the ``survey`` directory --- see
 :ref:`_model-survey-files`).
 
 For example, say we want to take the population model we just created,
-``pop_lm98.model``, and estimate from this how many pulsars would be detected
+``pop_ne2025.model``, and estimate from this how many pulsars would be detected
 in a putative LOFAR pulsar survey. This can be simply done using::
 
-  dosurvey -f pop_lm98.model -surveys LOFAR
+  dosurvey -f pop_ne2025.model -surveys LOFAR
 
 
 .. _visualise_model:

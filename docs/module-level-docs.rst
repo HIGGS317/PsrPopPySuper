@@ -22,4 +22,7 @@ Module-level Documentation
 .. _galacticops_module_docs:
 .. include:: galacticops_module_docs.rst
 
+.. _evolve_module_docs:
+.. include:: evolve_module_docs.rst
+
 

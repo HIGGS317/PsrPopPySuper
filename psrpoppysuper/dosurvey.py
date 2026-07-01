@@ -277,10 +277,10 @@ def main():
                             noresults=args.noresults)
 
     # write the output files
-     # write(surveyPopulations,
-    #       nores=args.noresults,
-    #       asc=args.asc,
-    #       summary=args.summary)
+    write(surveyPopulations,
+          nores=args.noresults,
+          asc=args.asc,
+          summary=args.summary)
 
 
 if __name__ == '__main__':

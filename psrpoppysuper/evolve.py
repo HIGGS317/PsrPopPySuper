@@ -304,6 +304,10 @@ def generate(ngen,
                 pulsar.dm = go.ne2025_dist_to_dm(pulsar.dtrue,
                                                  pulsar.gl,
                                                  pulsar.gb)
+            elif pop.electronModel == 'ymw16':
+                pulsar.dm = go.ymw16_dist_to_dm(pulsar.dtrue,
+                                                pulsar.gl,
+                                                pulsar.gb)
             else:
                 raise EvolveException('Invalid electron dist model selected')
 
@@ -780,7 +784,7 @@ def main():
     parser.add_argument('-dm', type=str, nargs=1, required=False,
                         default=['ne2025'],
                         help='Galactic electron distribution model to use',
-                        choices=['ne2001','lmt85','ne2025'])
+                        choices=['ne2001','lmt85','ne2025','ymw16'])
 
     # output file name
     parser.add_argument('-o', type=str, metavar='outfile', required=False,

@@ -11,6 +11,7 @@ from setuptools.command.build_py import build_py as _build_py
 HERE = Path(__file__).resolve().parent
 PKG_NAME = "PsrPopPySuper"
 FORTRAN_DIR = HERE / PKG_NAME / "fortran"
+C_DIR = HERE / PKG_NAME / "fortran" / "ymw16"
 
 LIBRARIES = {
     "libne2001": ["ne2001.f", "dm.f", "psr_ne.f", "dist.f", "calc_xyz.f", "density.f", "glun.f"],
@@ -20,6 +21,12 @@ LIBRARIES = {
     "libvxyz": ["vxyz.f", "rkqc.f", "rk4.f"],
     "libgamma": ["gamma.f"],
     "libgetseed": ["getseed.f", "clock.f"],
+}
+
+C_LIBRARIES = {
+    "libymw16": ["dmdtau.c", "dora.c", "fermibubble.c", "frb_d.c", "galcen.c", "gum.c", "lmc.c", "localbubble.c", "ne_crd.c", "nps.c", "smc.c", "spiral.c", "thick.c", "thin.c", "ymw16par.c","ymw16.c"],
+    "libymw16_ne": ["dmdtau.c", "dora.c", "fermibubble.c", "frb_d.c", "galcen.c", "gum.c", "lmc.c", "localbubble.c", "ne_crd.c", "nps.c", "smc.c", "spiral.c", "thick.c", "thin.c", "ymw16par.c","ymw16_ne.c"]
+
 }
 
 
@@ -34,6 +41,24 @@ def find_gfortran():
         "/usr/bin/gfortran",
         os.path.expanduser("~/miniforge3/bin/gfortran"),
         os.path.expanduser("~/miniforge3/envs/Psrpoppy/bin/gfortran"),
+    ]
+    for candidate in candidates:
+        if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
+            return candidate
+
+    return None
+
+def find_c_compiler():
+    cc = os.environ.get("CC") or shutil.which("gcc")
+    if cc:
+        return cc
+
+    candidates = [
+        "/opt/homebrew/bin/gcc",
+        "/usr/local/bin/gcc",
+        "/usr/bin/gcc",
+        os.path.expanduser("~/miniforge3/bin/gcc"),
+        os.path.expanduser("~/miniforge3/envs/Psrpoppy/bin/gcc"),
     ]
     for candidate in candidates:
         if os.path.isfile(candidate) and os.access(candidate, os.X_OK):
@@ -58,9 +83,33 @@ def build_fortran_library(libname, sources, compiler):
     subprocess.check_call(command, cwd=str(FORTRAN_DIR))
 
 
+def build_c_library(libname, sources, compiler):
+    if sys.platform == "darwin":
+        suffix = ".dylib"
+        flags = ["-dynamiclib", "-undefined", "dynamic_lookup","-lm","-fcommon"]
+    else:
+        suffix = ".so"
+        flags = ["-shared", "-fPIC","-lm","-fcommon"]
+
+    target = FORTRAN_DIR / f"{libname}{suffix}"
+    if target.exists():
+        # During dev, if the C code changed, we want to recompile it.
+        # But setup.py runs on every pip command, so we can check if we want to delete it.
+        # We will delete it manually from terminal for now.
+        return
+
+    command = [compiler] + flags + ["-o", str(target)] + [str(C_DIR / s) for s in sources]
+    subprocess.check_call(command, cwd=str(C_DIR))
+
+
 def build_fortran_libraries(compiler):
     for libname, sources in LIBRARIES.items():
         build_fortran_library(libname, sources, compiler)
+
+
+def build_c_libraries(compiler):
+    for libname, sources in C_LIBRARIES.items():
+        build_c_library(libname, sources, compiler)
 
 
 class BuildPyCommand(_build_py):
@@ -72,7 +121,14 @@ class BuildPyCommand(_build_py):
                 " or add gfortran to PATH before running pip install."
             )
 
+        gcc = find_c_compiler()
+        if not gcc:
+            sys.exit(
+                "ERROR: gcc not found. Install it with brew install gcc, conda install -c conda-forge gcc,"
+                " or add gcc to PATH before running pip install."
+            )
         build_fortran_libraries(gfortran)
+        build_c_libraries(gcc)
         super().run()
 
 

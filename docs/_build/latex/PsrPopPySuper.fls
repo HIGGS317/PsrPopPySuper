@@ -301,11 +301,10 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
-INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
-INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qtmri.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
+INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xttsl.tfm
 OUTPUT PsrPopPySuper.toc
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qtmr.tfm
@@ -314,6 +313,7 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/tex-gyre/ts1qtm.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbtt.tfm
@@ -330,12 +330,12 @@ INPUT ./wxView.png
 INPUT ./wxView.png
 INPUT ./wxView.png
 INPUT ./wxView.png
-INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvbi.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbttsl.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qtmr.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qtmr.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbttsl.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmri.tfm
 INPUT ./PsrPopPySuper.ind
 INPUT ./PsrPopPySuper.ind
 INPUT PsrPopPySuper.ind

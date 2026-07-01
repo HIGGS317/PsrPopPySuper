@@ -55,7 +55,7 @@ populate.py
 
    Model to describe the Galactic electron distribution
    
-   Supported: 'ne2025', 'lm98', 'ne2001'
+   Supported: 'ne2025', 'ne2001', 'ymw16'
 
 .. cmdoption:: -gps <fraction 'a'>
   

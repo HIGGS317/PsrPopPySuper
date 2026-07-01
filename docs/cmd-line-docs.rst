@@ -10,6 +10,9 @@ Command-line scripts
 .. _dosurvey_docs:
 .. include:: dosurvey_doc.rst
 
+.. _evolve_docs:
+.. include:: evolve_doc.rst
+
 .. _view_docs:
 .. include:: view_doc.rst
 

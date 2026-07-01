@@ -22,9 +22,9 @@
 
    Given a distance and Galactic coordinates, calculate DM according to NE2001
 
-.. method:: lmt85_dist_to_dm(dist, gl, gb)
+.. method:: ymw16_dist_to_dm(dist, gl, gb)
 
-   Given a distance and Galactic coordinates, calculate DM according to the LMT85 model
+   Given a distance and Galactic coordinates, calculate DM according to the YMW16 model
 
 .. method:: lb_to_radec(gl, gb)
 

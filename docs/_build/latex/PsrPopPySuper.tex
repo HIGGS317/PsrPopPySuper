@@ -64,7 +64,7 @@
 
 
 \title{PsrPopPySuper Documentation}
-\date{May 23, 2026}
+\date{Jul 01, 2026}
 \release{1}
 \author{D Tripathi}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -95,8 +95,8 @@ Contents:
 \label{\detokenize{introduction:introduction}}\label{\detokenize{introduction::doc}}
 \sphinxAtStartPar
 PsrPopPySuper is a modernized Python3 port of Sam Bates’ PsrPopPy code (\sphinxurl{https://github.com/samb8s/psrpoppy}).
-This project retains the original code’s functionality while updating interfaces and adding newer
-electron models (for example NE\sphinxhyphen{}2025) alongside NE\sphinxhyphen{}2001 and LMT85.
+This project retains the original code’s functionality and most of the user facing APIs while updating interfaces and adding newer
+electron models like NE2025 and YMW16.
 
 \sphinxAtStartPar
 Contributions are welcome via the project’s GitHub repository.
@@ -386,7 +386,7 @@ Supported: ‘lfl06’, ‘yk04’, ‘isotropic’, ‘slab’, ‘disk’
 Model to describe the Galactic electron distribution
 
 \sphinxAtStartPar
-Supported: ‘ne2025’, ‘lm98’, ‘ne2001’
+Supported: ‘ne2025’, ‘ne2001’, ‘ymw16’
 
 \end{fulllineitems}
 
@@ -515,6 +515,381 @@ Turn off writing to stdout. Useful for many iterations eg. in large simulations
 
 
 
+\section{evolve.py}
+\label{\detokenize{cmd-line-docs:evolve-py}}\label{\detokenize{cmd-line-docs:evolve-docs}}\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}n@\spxentry{\sphinxhyphen{}n}}\index{\sphinxhyphen{}n@\spxentry{\sphinxhyphen{}n}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-n}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}n}}\sphinxcode{\sphinxupquote{~\textless{}number~of~pulsars\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Required: Number of pulsars to generate or detect
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}o@\spxentry{\sphinxhyphen{}o}}\index{\sphinxhyphen{}o@\spxentry{\sphinxhyphen{}o}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-o}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}o}}\sphinxcode{\sphinxupquote{~\textless{}output\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Output file name for population model (def=evolve.model)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}asc@\spxentry{\sphinxhyphen{}asc}}\index{\sphinxhyphen{}asc@\spxentry{\sphinxhyphen{}asc}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-asc}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}asc}}\sphinxcode{\sphinxupquote{~\textless{}ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Output file name for ascii output file (def=None)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}surveys@\spxentry{\sphinxhyphen{}surveys}}\index{\sphinxhyphen{}surveys@\spxentry{\sphinxhyphen{}surveys}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-surveys}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}surveys}}\sphinxcode{\sphinxupquote{~\textless{}SURVEY~NAME(S)\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+List of surveys to use when trying to detect pulsars (default=None)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}dm@\spxentry{\sphinxhyphen{}dm}}\index{\sphinxhyphen{}dm@\spxentry{\sphinxhyphen{}dm}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-dm}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}dm}}\sphinxcode{\sphinxupquote{~\textless{}Electron~model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Model to describe the Galactic electron distribution
+
+\sphinxAtStartPar
+Supported: ‘ne2025’, , ‘ne2001’, ‘ymw16’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}tmax@\spxentry{\sphinxhyphen{}tmax}}\index{\sphinxhyphen{}tmax@\spxentry{\sphinxhyphen{}tmax}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-tmax}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}tmax}}\sphinxcode{\sphinxupquote{~\textless{}max~age\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Maximum initial age of pulsars, in years (def=1.0E9)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}p@\spxentry{\sphinxhyphen{}p}}\index{\sphinxhyphen{}p@\spxentry{\sphinxhyphen{}p}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-p}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}p}}\sphinxcode{\sphinxupquote{~\textless{}mean~stddev\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Period distribution mean and standard deviation, seconds (def=0.3, 0.15)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}ldist@\spxentry{\sphinxhyphen{}ldist}}\index{\sphinxhyphen{}ldist@\spxentry{\sphinxhyphen{}ldist}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-ldist}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}ldist}}\sphinxcode{\sphinxupquote{~\textless{}distribution\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Distribution to use for luminosities
+
+\sphinxAtStartPar
+Supported: ‘fk06’, ‘lnorm’, ‘pow’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}l@\spxentry{\sphinxhyphen{}l}}\index{\sphinxhyphen{}l@\spxentry{\sphinxhyphen{}l}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-l}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}l}}\sphinxcode{\sphinxupquote{~\textless{}parameters\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Luminosity distribution parameters (def=\sphinxhyphen{}1.5, 0.5)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}b@\spxentry{\sphinxhyphen{}b}}\index{\sphinxhyphen{}b@\spxentry{\sphinxhyphen{}b}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-b}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}b}}\sphinxcode{\sphinxupquote{~\textless{}mean~stddev\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Mean and standard deviation of log\sphinxhyphen{}normal B field distribution (Gauss, def=12.65, 0.55)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}vmodel@\spxentry{\sphinxhyphen{}vmodel}}\index{\sphinxhyphen{}vmodel@\spxentry{\sphinxhyphen{}vmodel}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-vmodel}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}vmodel}}\sphinxcode{\sphinxupquote{~\textless{}model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Velocity model to use
+
+\sphinxAtStartPar
+Supported: ‘gaussian’, ‘exp’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}v@\spxentry{\sphinxhyphen{}v}}\index{\sphinxhyphen{}v@\spxentry{\sphinxhyphen{}v}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-v}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}v}}\sphinxcode{\sphinxupquote{~\textless{}mean~stddev\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Velocity distribution values (def=0, 180 km/s)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}si@\spxentry{\sphinxhyphen{}si}}\index{\sphinxhyphen{}si@\spxentry{\sphinxhyphen{}si}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-si}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}si}}\sphinxcode{\sphinxupquote{~\textless{}mean~stddev\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Spectral index mean and standard deviation (def=\sphinxhyphen{}1.4, 0.96)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}spinmodel@\spxentry{\sphinxhyphen{}spinmodel}}\index{\sphinxhyphen{}spinmodel@\spxentry{\sphinxhyphen{}spinmodel}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-spinmodel}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}spinmodel}}\sphinxcode{\sphinxupquote{~\textless{}model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Spin\sphinxhyphen{}down model to employ
+
+\sphinxAtStartPar
+Supported: ‘fk06’, ‘cs06’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}alignmodel@\spxentry{\sphinxhyphen{}alignmodel}}\index{\sphinxhyphen{}alignmodel@\spxentry{\sphinxhyphen{}alignmodel}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-alignmodel}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}alignmodel}}\sphinxcode{\sphinxupquote{~\textless{}model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Pulsar alignment model to use
+
+\sphinxAtStartPar
+Supported: ‘orthogonal’, ‘random’, ‘rand45’, ‘wj08’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}aligntime@\spxentry{\sphinxhyphen{}aligntime}}\index{\sphinxhyphen{}aligntime@\spxentry{\sphinxhyphen{}aligntime}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-aligntime}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}aligntime}}\sphinxcode{\sphinxupquote{~\textless{}time\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Alignment timescale (def=None)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}beammodel@\spxentry{\sphinxhyphen{}beammodel}}\index{\sphinxhyphen{}beammodel@\spxentry{\sphinxhyphen{}beammodel}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-beammodel}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}beammodel}}\sphinxcode{\sphinxupquote{~\textless{}model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Beaming model to use (def=tm98)
+
+\sphinxAtStartPar
+Supported: ‘tm98’, ‘none’, ‘const’, ‘wj08’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}w@\spxentry{\sphinxhyphen{}w}}\index{\sphinxhyphen{}w@\spxentry{\sphinxhyphen{}w}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-w}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}w}}\sphinxcode{\sphinxupquote{~\textless{}width\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Pulse width to use when generating pulsars, percent (def=5.0)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}wmod@\spxentry{\sphinxhyphen{}wmod}}\index{\sphinxhyphen{}wmod@\spxentry{\sphinxhyphen{}wmod}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-wmod}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wmod}}\sphinxcode{\sphinxupquote{~\textless{}width~model\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Pulse width model to use
+
+\sphinxAtStartPar
+Supported: None, ‘kj07’
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}sc@\spxentry{\sphinxhyphen{}sc}}\index{\sphinxhyphen{}sc@\spxentry{\sphinxhyphen{}sc}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-sc}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}sc}}\sphinxcode{\sphinxupquote{~\textless{}scatter~index\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Spectral index of scattering law to use (def=\sphinxhyphen{}3.86)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}eff@\spxentry{\sphinxhyphen{}eff}}\index{\sphinxhyphen{}eff@\spxentry{\sphinxhyphen{}eff}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-eff}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}eff}}\sphinxcode{\sphinxupquote{~\textless{}efficiency~cutoff\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Efficiency cutoff value (def=None)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}z@\spxentry{\sphinxhyphen{}z}}\index{\sphinxhyphen{}z@\spxentry{\sphinxhyphen{}z}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-z}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}z}}\sphinxcode{\sphinxupquote{~\textless{}scale~height\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Exponential z\sphinxhyphen{}scale height for the population, in kpc (def=0.05)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}bi@\spxentry{\sphinxhyphen{}bi}}\index{\sphinxhyphen{}bi@\spxentry{\sphinxhyphen{}bi}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-bi}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}bi}}\sphinxcode{\sphinxupquote{~\textless{}braking~index\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Braking index value to use (def=0 = model default)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}\sphinxhyphen{}nostdout@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nostdout}}\index{\sphinxhyphen{}\sphinxhyphen{}nostdout@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nostdout}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-nostdout}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}\sphinxhyphen{}nostdout}}\sphinxcode{\sphinxupquote{}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Turn off writing to stdout.
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}\sphinxhyphen{}nodeathline@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nodeathline}}\index{\sphinxhyphen{}\sphinxhyphen{}nodeathline@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nodeathline}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-nodeathline}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}\sphinxhyphen{}nodeathline}}\sphinxcode{\sphinxupquote{}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Turn off the deathline.
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}\sphinxhyphen{}nospiralarms@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nospiralarms}}\index{\sphinxhyphen{}\sphinxhyphen{}nospiralarms@\spxentry{\sphinxhyphen{}\sphinxhyphen{}nospiralarms}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-nospiralarms}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}\sphinxhyphen{}nospiralarms}}\sphinxcode{\sphinxupquote{}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Turn off spiral arms galactic distribution.
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}\sphinxhyphen{}keepdead@\spxentry{\sphinxhyphen{}\sphinxhyphen{}keepdead}}\index{\sphinxhyphen{}\sphinxhyphen{}keepdead@\spxentry{\sphinxhyphen{}\sphinxhyphen{}keepdead}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-keepdead}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}\sphinxhyphen{}keepdead}}\sphinxcode{\sphinxupquote{}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Keep dead pulsars in the population model.
+
+\end{fulllineitems}
+
+
+
 \section{view.py}
 \label{\detokenize{cmd-line-docs:view-py}}\label{\detokenize{cmd-line-docs:view-doc}}\label{\detokenize{cmd-line-docs:view-docs}}\index{view.py command line option@\spxentry{view.py command line option}!\sphinxhyphen{}f@\spxentry{\sphinxhyphen{}f}}\index{\sphinxhyphen{}f@\spxentry{\sphinxhyphen{}f}!view.py command line option@\spxentry{view.py command line option}}
 
@@ -617,18 +992,46 @@ has detected 1038 pulsars. The file \sphinxcode{\sphinxupquote{populate.model}} 
 by default, which is a \sphinxhref{http://docs.python.org/library/pickle.html}{pickled}
 population object.
 
+
+\section{Evolve a Population Model}
+\label{\detokenize{tutorial-basic:evolve-a-population-model}}\label{\detokenize{tutorial-basic:evolve-population}}
 \sphinxAtStartPar
-If, instead, you wanted to use the Lyne \& Manchester (1998) electron
-distribution, and for whatever reason wanted to store the output in the
-file \sphinxcode{\sphinxupquote{pop\_lm98.model}}, then we could run:
+The \sphinxcode{\sphinxupquote{evolve}} script takes a snapshot\sphinxhyphen{}style population model and evolves
+it according to the Ridley \& Lorimer pulsar evolution method. This is
+useful when you want to generate a more realistic, age\sphinxhyphen{}dependent
+population before passing it on to a survey simulation.
+
+\sphinxAtStartPar
+A basic usage example is:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{populate} \PYG{o}{\PYGZhy{}}\PYG{n}{n} \PYG{l+m+mi}{1038} \PYG{o}{\PYGZhy{}}\PYG{n}{surveys} \PYG{n}{PMSURV} \PYG{o}{\PYGZhy{}}\PYG{n}{dm} \PYG{n}{lm98} \PYG{o}{\PYGZhy{}}\PYG{n}{o} \PYG{n}{pop\PYGZus{}lm98}\PYG{o}{.}\PYG{n}{model}
+\PYG{n}{evolve} \PYG{o}{\PYGZhy{}}\PYG{n}{n} \PYG{l+m+mi}{1000} \PYG{o}{\PYGZhy{}}\PYG{n}{surveys} \PYG{n}{PMSURV} \PYG{o}{\PYGZhy{}}\PYG{n}{dm} \PYG{n}{ne2025} \PYG{o}{\PYGZhy{}}\PYG{n}{o} \PYG{n}{evolve}\PYG{o}{.}\PYG{n}{model}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-A different output file will then be produced, where the population uses
-the new simulation parameters.
+This command will generate an evolved population of pulsars
+using the NE2025 electron density model. The output file
+\sphinxcode{\sphinxupquote{evolve.model}} can then be used by \sphinxcode{\sphinxupquote{dosurvey}} or visualised with
+\sphinxcode{\sphinxupquote{view.py}}.
+
+\sphinxAtStartPar
+The evolve script also supports the same survey and population controls as
+\sphinxcode{\sphinxupquote{populate}}, including pulse width, beaming, spin\sphinxhyphen{}down, and electron
+model options. For example, to use a fixed 5\% pulse width and the WJ08
+alignment model, run:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{evolve} \PYG{o}{\PYGZhy{}}\PYG{n}{n} \PYG{l+m+mi}{1000} \PYG{o}{\PYGZhy{}}\PYG{n}{surveys} \PYG{n}{PMSURV} \PYG{o}{\PYGZhy{}}\PYG{n}{w} \PYG{l+m+mf}{5.0} \PYG{o}{\PYGZhy{}}\PYG{n}{alignmodel} \PYG{n}{wj08} \PYG{o}{\PYGZhy{}}\PYG{n}{o} \PYG{n}{evolve}\PYG{o}{.}\PYG{n}{model}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+If you only want to generate the evolved population without checking a
+survey, omit the \sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}} option and use the output file directly:
+\begin{quote}
+
+\sphinxAtStartPar
+evolve \sphinxhyphen{}n 1000 \sphinxhyphen{}dm ne2025 \sphinxhyphen{}o evolve.model
+\end{quote}
 
 
 \section{Simulate a Pulsar Survey}
@@ -641,11 +1044,11 @@ survey (as specified in files in the \sphinxcode{\sphinxupquote{survey}} directo
 
 \sphinxAtStartPar
 For example, say we want to take the population model we just created,
-\sphinxcode{\sphinxupquote{pop\_lm98.model}}, and estimate from this how many pulsars would be detected
+\sphinxcode{\sphinxupquote{pop\_ne2025.model}}, and estimate from this how many pulsars would be detected
 in a putative LOFAR pulsar survey. This can be simply done using:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{dosurvey} \PYG{o}{\PYGZhy{}}\PYG{n}{f} \PYG{n}{pop\PYGZus{}lm98}\PYG{o}{.}\PYG{n}{model} \PYG{o}{\PYGZhy{}}\PYG{n}{surveys} \PYG{n}{LOFAR}
+\PYG{n}{dosurvey} \PYG{o}{\PYGZhy{}}\PYG{n}{f} \PYG{n}{pop\PYGZus{}ne2025}\PYG{o}{.}\PYG{n}{model} \PYG{o}{\PYGZhy{}}\PYG{n}{surveys} \PYG{n}{LOFAR}
 \end{sphinxVerbatim}
 
 
@@ -686,7 +1089,7 @@ to create scatter plots of various parameters (see screenshot below).
 \chapter{Module\sphinxhyphen{}level Documentation}
 \label{\detokenize{module-level-docs:module-level-documentation}}\label{\detokenize{module-level-docs:module-level-docs}}\label{\detokenize{module-level-docs::doc}}
 
-\section{\sphinxstyleliteralintitle{\sphinxupquote{pulsar}} \textendash{} Creates/stores a pulsar object}
+\section{{\hyperref[\detokenize{module-level-docs:module-pulsar}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{pulsar}}}}} \textendash{} Creates/stores a pulsar object}
 \label{\detokenize{module-level-docs:module-pulsar}}\label{\detokenize{module-level-docs:pulsar-creates-stores-a-pulsar-object}}\label{\detokenize{module-level-docs:pulsar-module-docs}}\index{module@\spxentry{module}!pulsar@\spxentry{pulsar}}\index{pulsar@\spxentry{pulsar}!module@\spxentry{module}}\index{Pulsar (class in pulsar)@\spxentry{Pulsar}\spxextra{class in pulsar}}
 
 \begin{fulllineitems}
@@ -750,7 +1153,7 @@ Returns the pulse width in milliseconds, calculated as
 
 
 
-\section{\sphinxstyleliteralintitle{\sphinxupquote{population}} \textendash{} Creates/stores a population}
+\section{{\hyperref[\detokenize{module-level-docs:module-population}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{population}}}}} \textendash{} Creates/stores a population}
 \label{\detokenize{module-level-docs:module-population}}\label{\detokenize{module-level-docs:population-creates-stores-a-population}}\label{\detokenize{module-level-docs:population-module-docs}}\index{module@\spxentry{module}!population@\spxentry{population}}\index{population@\spxentry{population}!module@\spxentry{module}}\index{Population (class in population)@\spxentry{Population}\spxextra{class in population}}
 
 \begin{fulllineitems}
@@ -853,7 +1256,7 @@ Writes the population to an ascii file in the old psrpop way
 
 
 
-\section{\sphinxstyleliteralintitle{\sphinxupquote{survey}} \textendash{} Read a survey file into a survey object}
+\section{{\hyperref[\detokenize{module-level-docs:module-survey}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{survey}}}}} \textendash{} Read a survey file into a survey object}
 \label{\detokenize{module-level-docs:module-survey}}\label{\detokenize{module-level-docs:survey-read-a-survey-file-into-a-survey-object}}\label{\detokenize{module-level-docs:survey-module-docs}}\index{module@\spxentry{module}!survey@\spxentry{survey}}\index{survey@\spxentry{survey}!module@\spxentry{module}}\index{Survey (class in survey)@\spxentry{Survey}\spxextra{class in survey}}
 
 \begin{fulllineitems}
@@ -923,7 +1326,7 @@ Returns the number of channels, calculated as
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-Determines if \sphinxcode{\sphinxupquote{Pulsar}} is inside survey region. Returns True or False accordingly
+Determines if {\hyperref[\detokenize{module-level-docs:pulsar.Pulsar}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Pulsar}}}}} is inside survey region. Returns True or False accordingly
 
 \end{fulllineitems}
 
@@ -938,7 +1341,7 @@ Determines if \sphinxcode{\sphinxupquote{Pulsar}} is inside survey region. Retur
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-Determines if \sphinxcode{\sphinxupquote{Pulsar}} is inside one of the survey’s \sphinxcode{\sphinxupquote{pointings}}. Returns the offset from beam centre to the pulsar.
+Determines if {\hyperref[\detokenize{module-level-docs:pulsar.Pulsar}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Pulsar}}}}} is inside one of the survey’s {\hyperref[\detokenize{module-level-docs:survey.Pointing}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{pointings}}}}}. Returns the offset from beam centre to the pulsar.
 
 \end{fulllineitems}
 
@@ -953,7 +1356,7 @@ Determines if \sphinxcode{\sphinxupquote{Pulsar}} is inside one of the survey’
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-Calculates the SNR of a \sphinxcode{\sphinxupquote{Pulsar}} from \sphinxcode{\sphinxupquote{Population}} \sphinxcode{\sphinxupquote{pop}} in the survey. Returns \sphinxhyphen{}1 if pulse is smeared, and \sphinxhyphen{}2 if pulsar is outside survey region. SNR is calculated (with familiar terms) as
+Calculates the SNR of a {\hyperref[\detokenize{module-level-docs:pulsar.Pulsar}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Pulsar}}}}} from {\hyperref[\detokenize{module-level-docs:population.Population}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Population}}}}} \sphinxcode{\sphinxupquote{pop}} in the survey. Returns \sphinxhyphen{}1 if pulse is smeared, and \sphinxhyphen{}2 if pulsar is outside survey region. SNR is calculated (with familiar terms) as
 
 \sphinxAtStartPar
 \({\rm{SNR}} = \frac{S_{1400} G \sqrt{n_{\rm{pol}} BW \tau}}{\beta T_{\rm{tot}}} \sqrt{\frac{1-\delta}{\delta}} \eta\)
@@ -994,7 +1397,7 @@ either \sphinxcode{\sphinxupquote{eq}} or \sphinxcode{\sphinxupquote{gal}}. If \
 
 
 
-\section{\sphinxstyleliteralintitle{\sphinxupquote{populate}} \textendash{} Create a population object}
+\section{{\hyperref[\detokenize{module-level-docs:module-populate}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{populate}}}}} \textendash{} Create a population object}
 \label{\detokenize{module-level-docs:module-populate}}\label{\detokenize{module-level-docs:populate-create-a-population-object}}\label{\detokenize{module-level-docs:populate-module-docs}}\index{module@\spxentry{module}!populate@\spxentry{populate}}\index{populate@\spxentry{populate}!module@\spxentry{module}}\index{Populate (class in populate)@\spxentry{Populate}\spxextra{class in populate}}
 
 \begin{fulllineitems}
@@ -1031,13 +1434,13 @@ The method called by the \sphinxcode{\sphinxupquote{populate.py}} command\sphinx
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-Writes the \sphinxcode{\sphinxupquote{Population}} model into file outf as a cPickle dump
+Writes the {\hyperref[\detokenize{module-level-docs:population.Population}]{\sphinxcrossref{\sphinxcode{\sphinxupquote{Population}}}}} model into file outf as a cPickle dump
 
 \end{fulllineitems}
 
 
 
-\section{\sphinxstyleliteralintitle{\sphinxupquote{radialmodels}} \textendash{} Container for radial distn models}
+\section{{\hyperref[\detokenize{module-level-docs:module-radialmodels}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{radialmodels}}}}} \textendash{} Container for radial distn models}
 \label{\detokenize{module-level-docs:module-radialmodels}}\label{\detokenize{module-level-docs:radialmodels-container-for-radial-distn-models}}\label{\detokenize{module-level-docs:radialmodels-module-docs}}\index{module@\spxentry{module}!radialmodels@\spxentry{radialmodels}}\index{radialmodels@\spxentry{radialmodels}!module@\spxentry{module}}\index{RadialModels (class in radialmodels)@\spxentry{RadialModels}\spxextra{class in radialmodels}}
 
 \begin{fulllineitems}
@@ -1196,18 +1599,18 @@ Given a distance and Galactic coordinates, calculate DM according to NE2001
 
 \end{fulllineitems}
 
-\index{lmt85\_dist\_to\_dm() (in module galacticops)@\spxentry{lmt85\_dist\_to\_dm()}\spxextra{in module galacticops}}
+\index{ymw16\_dist\_to\_dm() (in module galacticops)@\spxentry{ymw16\_dist\_to\_dm()}\spxextra{in module galacticops}}
 
 \begin{fulllineitems}
-\phantomsection\label{\detokenize{module-level-docs:galacticops.lmt85_dist_to_dm}}
+\phantomsection\label{\detokenize{module-level-docs:galacticops.ymw16_dist_to_dm}}
 \pysigstartsignatures
 \pysiglinewithargsret
-{\sphinxcode{\sphinxupquote{galacticops.}}\sphinxbfcode{\sphinxupquote{lmt85\_dist\_to\_dm}}}
+{\sphinxcode{\sphinxupquote{galacticops.}}\sphinxbfcode{\sphinxupquote{ymw16\_dist\_to\_dm}}}
 {\sphinxparam{\DUrole{n}{dist}}\sphinxparamcomma \sphinxparam{\DUrole{n}{gl}}\sphinxparamcomma \sphinxparam{\DUrole{n}{gb}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-Given a distance and Galactic coordinates, calculate DM according to the LMT85 model
+Given a distance and Galactic coordinates, calculate DM according to the YMW16 model
 
 \end{fulllineitems}
 
@@ -1318,6 +1721,49 @@ and typically \({\rm{scatterindex}} = -3.86\) (but there is an option to vary it
 
 
 
+\section{{\hyperref[\detokenize{module-level-docs:module-evolve}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{evolve}}}}} \textendash{} Evolve a pulsar population object}
+\label{\detokenize{module-level-docs:evolve-evolve-a-pulsar-population-object}}\label{\detokenize{module-level-docs:evolve-module-docs}}\index{module@\spxentry{module}!evolve@\spxentry{evolve}}\index{evolve@\spxentry{evolve}!module@\spxentry{module}}\index{EvolveException (class in evolve)@\spxentry{EvolveException}\spxextra{class in evolve}}\phantomsection\label{\detokenize{module-level-docs:module-evolve}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{module-level-docs:evolve.EvolveException}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\DUrole{k}{class}\DUrole{w}{ }}}\sphinxcode{\sphinxupquote{evolve.}}\sphinxbfcode{\sphinxupquote{EvolveException}}}
+\pysigstopsignatures
+\end{fulllineitems}
+
+\index{generate() (in module evolve)@\spxentry{generate()}\spxextra{in module evolve}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{module-level-docs:evolve.generate}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{evolve.}}\sphinxbfcode{\sphinxupquote{generate}}}
+{\sphinxparam{\DUrole{n}{ngen}}\sphinxparamcomma \sphinxparam{\DUrole{n}{surveyList}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{age\_max}\DUrole{o}{=}\DUrole{default_value}{1.0E9}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}.3, .15{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{bFieldPars}\DUrole{o}{=}\DUrole{default_value}{{[}12.65, 0.55{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVPars}\DUrole{o}{=}\DUrole{default_value}{{[}0.0, 180.{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{siDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.6, 0.35{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}orthogonal\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistType}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.5, 0.5{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignTime}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{spinModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{beamModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}tm98\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}gaussian\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{electronModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}ne2025\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{braking\_index}\DUrole{o}{=}\DUrole{default_value}{0}}\sphinxparamcomma \sphinxparam{\DUrole{n}{zscale}\DUrole{o}{=}\DUrole{default_value}{0.05}}\sphinxparamcomma \sphinxparam{\DUrole{n}{duty}\DUrole{o}{=}\DUrole{default_value}{5.}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scindex}\DUrole{o}{=}\DUrole{default_value}{\sphinxhyphen{}3.86}}\sphinxparamcomma \sphinxparam{\DUrole{n}{widthModel}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nodeathline}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{efficiencycut}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nostdout}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nospiralarms}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{keepdead}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{ascfile}\DUrole{o}{=}\DUrole{default_value}{None}}}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+Generate an evolved pulsar population model.
+
+\end{fulllineitems}
+
+\index{main() (in module evolve)@\spxentry{main()}\spxextra{in module evolve}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{module-level-docs:evolve.main}}
+\pysigstartsignatures
+\pysiglinewithargsret
+{\sphinxcode{\sphinxupquote{evolve.}}\sphinxbfcode{\sphinxupquote{main}}}
+{}
+{}
+\pysigstopsignatures
+\sphinxAtStartPar
+Entry point for the evolve console script.
+
+\end{fulllineitems}
+
+
+
 \chapter{Indices and tables}
 \label{\detokenize{index:indices-and-tables}}\begin{itemize}
 \item {} 
@@ -1338,8 +1784,22 @@ and typically \({\rm{scatterindex}} = -3.86\) (but there is an option to vary it
 \renewcommand{\indexname}{Python Module Index}
 \begin{sphinxtheindex}
 \let\bigletter\sphinxstyleindexlettergroup
+\bigletter{e}
+\item\relax\sphinxstyleindexentry{evolve}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-evolve}}
+\indexspace
 \bigletter{g}
 \item\relax\sphinxstyleindexentry{galacticops}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-galacticops}}
+\indexspace
+\bigletter{p}
+\item\relax\sphinxstyleindexentry{populate}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-populate}}
+\item\relax\sphinxstyleindexentry{population}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-population}}
+\item\relax\sphinxstyleindexentry{pulsar}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-pulsar}}
+\indexspace
+\bigletter{r}
+\item\relax\sphinxstyleindexentry{radialmodels}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-radialmodels}}
+\indexspace
+\bigletter{s}
+\item\relax\sphinxstyleindexentry{survey}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-survey}}
 \end{sphinxtheindex}
 
 \renewcommand{\indexname}{Index}

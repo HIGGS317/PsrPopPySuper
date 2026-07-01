@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  23 MAY 2026 12:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  1 JUL 2026 13:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -869,14 +869,14 @@ r/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}] [2
 
 ]
 (./PsrPopPySuper.toc
-LaTeX Font Info:    Trying to load font information for T1+txtt on input line 1
-9.
+LaTeX Font Info:    Trying to load font information for T1+txtt on input line 2
+1.
 
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/t1txtt.fd
 File: t1txtt.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `T1/txtt/m/it' in size <10> not available
-(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 24.
+(Font)              Font shape `T1/txtt/m/sl' tried instead on input line 21.
 )
 \tf@toc=\write6
 \openout6 = `PsrPopPySuper.toc'.
@@ -911,50 +911,48 @@ File: ts1txtt.fd 2000/12/15 v3.1
 ) [7
 
 ]
-[8]
+[8] [9] [10]
 Chapter 4.
-[9
-
-]
-<wxView.png, id=232, 472.01344pt x 458.46281pt>
-File: wxView.png Graphic file (type png)
-<use wxView.png>
-Package pdftex.def Info: wxView.png  used on input line 681.
-(pdftex.def)             Requested size: 469.76515pt x 456.29305pt.
- [10 <./wxView.png>]
-Chapter 5.
-LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <14.4> not available
-(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 689.
 [11
 
-] [12]
-LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <14.4> not available
-(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1128
-.
-LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1128
-.
-LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1321
-.
-LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1321
-.
- [13] [14
+]
+<wxView.png, id=290, 472.01344pt x 458.46281pt>
+File: wxView.png Graphic file (type png)
+<use wxView.png>
+Package pdftex.def Info: wxView.png  used on input line 1084.
+(pdftex.def)             Requested size: 469.76515pt x 456.29305pt.
+ [12] [13 <./wxView.png>] [14
 
 ]
+Chapter 5.
+LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <14.4> not available
+(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1092
+.
+LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <14.4> not available
+(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1092
+.
+[15] [16]
+LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <10> not available
+(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1724
+.
+LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <10> not available
+(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1724
+.
+ [17] [18]
 Chapter 6.
-[15] [16
+[19
 
-] [17
+] [20
+
+] [21
 
 
-] (./PsrPopPySuper.ind [18
+] (./PsrPopPySuper.ind [22
 
 
-] [19
+] [23
 
-] [20])
+] [24] [25])
 
 Package sphinx Warning: The package pict2e is required for rounded boxes.
 (sphinx)                As it does not seem to be available on your system,
@@ -972,16 +970,16 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `PsrPopPySuper.out' has not changed.
-(rerunfilecheck)             Checksum: A3F9C91F53AB181F27C9E0CB861C9B3B;4696.
+(rerunfilecheck)             Checksum: 4BFFE9BF7A411F7261996B5C71C421D6;5273.
  ) 
 Here is how much of TeX's memory you used:
- 20278 strings out of 469006
- 366265 string characters out of 5454813
- 765963 words of memory out of 5000000
- 48482 multiletter control sequences out of 15000+600000
- 689172 words of font info for 88 fonts, out of 8000000 for 9000
+ 20358 strings out of 469006
+ 368210 string characters out of 5454813
+ 770912 words of memory out of 5000000
+ 48523 multiletter control sequences out of 15000+600000
+ 689249 words of font info for 88 fonts, out of 8000000 for 9000
  320 hyphenation exceptions out of 8191
- 72i,12n,82p,1202b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,12n,82p,2744b,648s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/cmex1
 0.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/amsfonts/
@@ -1002,10 +1000,10 @@ lic/txfonts/t1xbtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/pub
 lic/txfonts/t1xtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/publ
 ic/txfonts/t1xtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/publi
 c/txfonts/tcxtt.pfb>
-Output written on PsrPopPySuper.pdf (24 pages, 328554 bytes).
+Output written on PsrPopPySuper.pdf (29 pages, 343252 bytes).
 PDF statistics:
- 539 PDF objects out of 1000 (max. 8388607)
- 478 compressed objects within 5 object streams
- 118 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 246 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,4 @@
+[console_scripts]
+dosurvey = psrpoppysuper.dosurvey:main
+evolve = psrpoppysuper.evolve:main
+populate = psrpoppysuper.populate:main
