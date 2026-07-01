@@ -5,12 +5,12 @@
 \let\spxextra \sphinxstyleindexextra
 
   \bigletter {\sphinxsymbolsname}
-  \item \spxentry{\_\_init\_\_()}\spxextra{population.Population method}, \hyperpage{15}
-  \item \spxentry{\_\_init\_\_()}\spxextra{pulsar.Pulsar method}, \hyperpage{15}
-  \item \spxentry{\_\_init\_\_()}\spxextra{survey.Pointing method}, \hyperpage{16}
-  \item \spxentry{\_\_init\_\_()}\spxextra{survey.Survey method}, \hyperpage{16}
-  \item \spxentry{\_\_str\_\_()}\spxextra{population.Population method}, \hyperpage{15}
-  \item \spxentry{\_\_str\_\_()}\spxextra{survey.Survey method}, \hyperpage{16}
+  \item \spxentry{\_\_init\_\_()}\spxextra{population.Population method}, \hyperpage{13}
+  \item \spxentry{\_\_init\_\_()}\spxextra{pulsar.Pulsar method}, \hyperpage{13}
+  \item \spxentry{\_\_init\_\_()}\spxextra{survey.Pointing method}, \hyperpage{14}
+  \item \spxentry{\_\_init\_\_()}\spxextra{survey.Survey method}, \hyperpage{14}
+  \item \spxentry{\_\_str\_\_()}\spxextra{population.Population method}, \hyperpage{13}
+  \item \spxentry{\_\_str\_\_()}\spxextra{survey.Survey method}, \hyperpage{14}
   \item \spxentry{\sphinxhyphen{}\sphinxhyphen{}asc}
     \subitem \spxentry{dosurvey.py command line option}, \hyperpage{8}
   \item \spxentry{\sphinxhyphen{}\sphinxhyphen{}keepdead}
@@ -104,12 +104,12 @@
 
   \indexspace
   \bigletter C
-  \item \spxentry{calc\_dtrue()}\spxextra{in module galacticops}, \hyperpage{17}
-  \item \spxentry{calcXY()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{calc\_dtrue()}\spxextra{in module galacticops}, \hyperpage{15}
+  \item \spxentry{calcXY()}\spxextra{in module galacticops}, \hyperpage{15}
 
   \indexspace
   \bigletter D
-  \item \spxentry{diskdist()}\spxextra{in module radialmodels}, \hyperpage{17}
+  \item \spxentry{diskdist()}\spxextra{in module radialmodels}, \hyperpage{15}
   \item \spxentry{dosurvey.py command line option}
     \subitem \spxentry{\sphinxhyphen{}\sphinxhyphen{}asc}, \hyperpage{8}
     \subitem \spxentry{\sphinxhyphen{}\sphinxhyphen{}noresults}, \hyperpage{8}
@@ -121,7 +121,7 @@
   \indexspace
   \bigletter E
   \item \spxentry{evolve}
-    \subitem \spxentry{module}, \hyperpage{18}
+    \subitem \spxentry{module}, \hyperpage{16}
   \item \spxentry{evolve.py command line option}
     \subitem \spxentry{\sphinxhyphen{}\sphinxhyphen{}keepdead}, \hyperpage{10}
     \subitem \spxentry{\sphinxhyphen{}\sphinxhyphen{}nodeathline}, \hyperpage{10}
@@ -150,55 +150,55 @@
     \subitem \spxentry{\sphinxhyphen{}w}, \hyperpage{9}
     \subitem \spxentry{\sphinxhyphen{}wmod}, \hyperpage{9}
     \subitem \spxentry{\sphinxhyphen{}z}, \hyperpage{9}
-  \item \spxentry{EvolveException}\spxextra{class in evolve}, \hyperpage{18}
+  \item \spxentry{EvolveException}\spxextra{class in evolve}, \hyperpage{16}
 
   \indexspace
   \bigletter G
   \item \spxentry{galacticops}
-    \subitem \spxentry{module}, \hyperpage{17}
-  \item \spxentry{GalacticOps}\spxextra{class in galacticops}, \hyperpage{17}
-  \item \spxentry{generate()}\spxextra{in module evolve}, \hyperpage{18}
-  \item \spxentry{generate()}\spxextra{populate.Populate method}, \hyperpage{16}
+    \subitem \spxentry{module}, \hyperpage{15}
+  \item \spxentry{GalacticOps}\spxextra{class in galacticops}, \hyperpage{15}
+  \item \spxentry{generate()}\spxextra{in module evolve}, \hyperpage{16}
+  \item \spxentry{generate()}\spxextra{populate.Populate method}, \hyperpage{14}
 
   \indexspace
   \bigletter I
-  \item \spxentry{inPointing()}\spxextra{survey.Survey method}, \hyperpage{16}
-  \item \spxentry{inRegion()}\spxextra{survey.Survey method}, \hyperpage{16}
+  \item \spxentry{inPointing()}\spxextra{survey.Survey method}, \hyperpage{14}
+  \item \spxentry{inRegion()}\spxextra{survey.Survey method}, \hyperpage{14}
 
   \indexspace
   \bigletter J
-  \item \spxentry{join()}\spxextra{population.Population method}, \hyperpage{15}
+  \item \spxentry{join()}\spxextra{population.Population method}, \hyperpage{13}
 
   \indexspace
   \bigletter L
-  \item \spxentry{lb\_to\_radec()}\spxextra{in module galacticops}, \hyperpage{17}
-  \item \spxentry{lb\_to\_xyz()}\spxextra{in module galacticops}, \hyperpage{17}
-  \item \spxentry{lfl06()}\spxextra{in module radialmodels}, \hyperpage{17}
+  \item \spxentry{lb\_to\_radec()}\spxextra{in module galacticops}, \hyperpage{15}
+  \item \spxentry{lb\_to\_xyz()}\spxextra{in module galacticops}, \hyperpage{15}
+  \item \spxentry{lfl06()}\spxextra{in module radialmodels}, \hyperpage{15}
 
   \indexspace
   \bigletter M
-  \item \spxentry{main()}\spxextra{in module evolve}, \hyperpage{18}
+  \item \spxentry{main()}\spxextra{in module evolve}, \hyperpage{16}
   \item \spxentry{module}
-    \subitem \spxentry{evolve}, \hyperpage{18}
-    \subitem \spxentry{galacticops}, \hyperpage{17}
-    \subitem \spxentry{populate}, \hyperpage{16}
-    \subitem \spxentry{population}, \hyperpage{15}
-    \subitem \spxentry{pulsar}, \hyperpage{15}
-    \subitem \spxentry{radialmodels}, \hyperpage{16}
-    \subitem \spxentry{survey}, \hyperpage{16}
+    \subitem \spxentry{evolve}, \hyperpage{16}
+    \subitem \spxentry{galacticops}, \hyperpage{15}
+    \subitem \spxentry{populate}, \hyperpage{14}
+    \subitem \spxentry{population}, \hyperpage{13}
+    \subitem \spxentry{pulsar}, \hyperpage{13}
+    \subitem \spxentry{radialmodels}, \hyperpage{14}
+    \subitem \spxentry{survey}, \hyperpage{14}
 
   \indexspace
   \bigletter N
-  \item \spxentry{nchans()}\spxextra{survey.Survey method}, \hyperpage{16}
-  \item \spxentry{ne2001\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{17}
-  \item \spxentry{ne2025\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{nchans()}\spxextra{survey.Survey method}, \hyperpage{14}
+  \item \spxentry{ne2001\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{15}
+  \item \spxentry{ne2025\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{15}
 
   \indexspace
   \bigletter P
-  \item \spxentry{Pointing}\spxextra{class in survey}, \hyperpage{16}
+  \item \spxentry{Pointing}\spxextra{class in survey}, \hyperpage{14}
   \item \spxentry{populate}
-    \subitem \spxentry{module}, \hyperpage{16}
-  \item \spxentry{Populate}\spxextra{class in populate}, \hyperpage{16}
+    \subitem \spxentry{module}, \hyperpage{14}
+  \item \spxentry{Populate}\spxextra{class in populate}, \hyperpage{14}
   \item \spxentry{populate.py command line option}
     \subitem \spxentry{\sphinxhyphen{}\sphinxhyphen{}nostdout}, \hyperpage{8}
     \subitem \spxentry{\sphinxhyphen{}asc}, \hyperpage{7}
@@ -216,34 +216,34 @@
     \subitem \spxentry{\sphinxhyphen{}w}, \hyperpage{7}
     \subitem \spxentry{\sphinxhyphen{}z}, \hyperpage{7}
   \item \spxentry{population}
-    \subitem \spxentry{module}, \hyperpage{15}
-  \item \spxentry{Population}\spxextra{class in population}, \hyperpage{15}
+    \subitem \spxentry{module}, \hyperpage{13}
+  \item \spxentry{Population}\spxextra{class in population}, \hyperpage{13}
   \item \spxentry{pulsar}
-    \subitem \spxentry{module}, \hyperpage{15}
-  \item \spxentry{Pulsar}\spxextra{class in pulsar}, \hyperpage{15}
+    \subitem \spxentry{module}, \hyperpage{13}
+  \item \spxentry{Pulsar}\spxextra{class in pulsar}, \hyperpage{13}
 
   \indexspace
   \bigletter R
-  \item \spxentry{ra\_dec\_to\_lb()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{ra\_dec\_to\_lb()}\spxextra{in module galacticops}, \hyperpage{15}
   \item \spxentry{radialmodels}
-    \subitem \spxentry{module}, \hyperpage{16}
-  \item \spxentry{RadialModels}\spxextra{class in radialmodels}, \hyperpage{16}
+    \subitem \spxentry{module}, \hyperpage{14}
+  \item \spxentry{RadialModels}\spxextra{class in radialmodels}, \hyperpage{14}
 
   \indexspace
   \bigletter S
-  \item \spxentry{s\_1400()}\spxextra{pulsar.Pulsar method}, \hyperpage{15}
-  \item \spxentry{scatter\_bhat()}\spxextra{in module galacticops}, \hyperpage{17}
-  \item \spxentry{seed()}\spxextra{in module radialmodels}, \hyperpage{16}
-  \item \spxentry{size()}\spxextra{population.Population method}, \hyperpage{15}
-  \item \spxentry{slabdist()}\spxextra{in module radialmodels}, \hyperpage{16}
-  \item \spxentry{SNRcalc()}\spxextra{survey.Survey method}, \hyperpage{16}
+  \item \spxentry{s\_1400()}\spxextra{pulsar.Pulsar method}, \hyperpage{13}
+  \item \spxentry{scatter\_bhat()}\spxextra{in module galacticops}, \hyperpage{15}
+  \item \spxentry{seed()}\spxextra{in module radialmodels}, \hyperpage{14}
+  \item \spxentry{size()}\spxextra{population.Population method}, \hyperpage{13}
+  \item \spxentry{slabdist()}\spxextra{in module radialmodels}, \hyperpage{14}
+  \item \spxentry{SNRcalc()}\spxextra{survey.Survey method}, \hyperpage{14}
   \item \spxentry{survey}
-    \subitem \spxentry{module}, \hyperpage{16}
-  \item \spxentry{Survey}\spxextra{class in survey}, \hyperpage{16}
+    \subitem \spxentry{module}, \hyperpage{14}
+  \item \spxentry{Survey}\spxextra{class in survey}, \hyperpage{14}
 
   \indexspace
   \bigletter T
-  \item \spxentry{tsky()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{tsky()}\spxextra{in module galacticops}, \hyperpage{15}
 
   \indexspace
   \bigletter V
@@ -257,18 +257,18 @@
 
   \indexspace
   \bigletter W
-  \item \spxentry{width\_ms()}\spxextra{pulsar.Pulsar method}, \hyperpage{15}
-  \item \spxentry{write()}\spxextra{populate.Populate method}, \hyperpage{16}
-  \item \spxentry{write()}\spxextra{population.Population method}, \hyperpage{15}
-  \item \spxentry{write\_asc()}\spxextra{population.Population method}, \hyperpage{15}
+  \item \spxentry{width\_ms()}\spxextra{pulsar.Pulsar method}, \hyperpage{13}
+  \item \spxentry{write()}\spxextra{populate.Populate method}, \hyperpage{14}
+  \item \spxentry{write()}\spxextra{population.Population method}, \hyperpage{13}
+  \item \spxentry{write\_asc()}\spxextra{population.Population method}, \hyperpage{13}
 
   \indexspace
   \bigletter X
-  \item \spxentry{xyz\_to\_lb()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{xyz\_to\_lb()}\spxextra{in module galacticops}, \hyperpage{15}
 
   \indexspace
   \bigletter Y
-  \item \spxentry{ykr()}\spxextra{in module radialmodels}, \hyperpage{17}
-  \item \spxentry{ymw16\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{17}
+  \item \spxentry{ykr()}\spxextra{in module radialmodels}, \hyperpage{15}
+  \item \spxentry{ymw16\_dist\_to\_dm()}\spxextra{in module galacticops}, \hyperpage{15}
 
 \end{sphinxtheindex}

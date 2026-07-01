@@ -16,15 +16,15 @@
 \contentsline {section}{\numberline {4.1}Generate Population Model}{11}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Evolve a Population Model}{11}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Simulate a Pulsar Survey}{12}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Visualising a Pulsar Model}{12}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Module\sphinxhyphen {}level Documentation}{15}{chapter.5}%
-\contentsline {section}{\numberline {5.1}{\hyperref [module-level-docs:module-pulsar]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {pulsar}}}}} \textendash {} Creates/stores a pulsar object}{15}{section.5.1}%
-\contentsline {section}{\numberline {5.2}{\hyperref [module-level-docs:module-population]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {population}}}}} \textendash {} Creates/stores a population}{15}{section.5.2}%
-\contentsline {section}{\numberline {5.3}{\hyperref [module-level-docs:module-survey]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {survey}}}}} \textendash {} Read a survey file into a survey object}{16}{section.5.3}%
-\contentsline {section}{\numberline {5.4}{\hyperref [module-level-docs:module-populate]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {populate}}}}} \textendash {} Create a population object}{16}{section.5.4}%
-\contentsline {section}{\numberline {5.5}{\hyperref [module-level-docs:module-radialmodels]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {radialmodels}}}}} \textendash {} Container for radial distn models}{16}{section.5.5}%
-\contentsline {section}{\numberline {5.6}{\hyperref [module-level-docs:module-galacticops]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {galacticops}}}}} \textendash {} Container for functions relating to the Galaxy}{17}{section.5.6}%
-\contentsline {section}{\numberline {5.7}{\hyperref [module-level-docs:module-evolve]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {evolve}}}}} \textendash {} Evolve a pulsar population object}{18}{section.5.7}%
-\contentsline {chapter}{\numberline {6}Indices and tables}{19}{chapter.6}%
-\contentsline {chapter}{Python Module Index}{21}{section*.101}%
-\contentsline {chapter}{Index}{23}{section*.102}%
+\contentsline {section}{\numberline {4.4}Using PsrPopPySuper as a Python Module}{12}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Module\sphinxhyphen {}level Documentation}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}{\hyperref [module-level-docs:module-pulsar]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {pulsar}}}}} \textendash {} Creates/stores a pulsar object}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}{\hyperref [module-level-docs:module-population]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {population}}}}} \textendash {} Creates/stores a population}{13}{section.5.2}%
+\contentsline {section}{\numberline {5.3}{\hyperref [module-level-docs:module-survey]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {survey}}}}} \textendash {} Read a survey file into a survey object}{14}{section.5.3}%
+\contentsline {section}{\numberline {5.4}{\hyperref [module-level-docs:module-populate]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {populate}}}}} \textendash {} Create a population object}{14}{section.5.4}%
+\contentsline {section}{\numberline {5.5}{\hyperref [module-level-docs:module-radialmodels]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {radialmodels}}}}} \textendash {} Container for radial distn models}{14}{section.5.5}%
+\contentsline {section}{\numberline {5.6}{\hyperref [module-level-docs:module-galacticops]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {galacticops}}}}} \textendash {} Container for functions relating to the Galaxy}{15}{section.5.6}%
+\contentsline {section}{\numberline {5.7}{\hyperref [module-level-docs:module-evolve]{\sphinxcrossref {\sphinxstyleliteralintitle {\sphinxupquote {evolve}}}}} \textendash {} Evolve a pulsar population object}{16}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Indices and tables}{17}{chapter.6}%
+\contentsline {chapter}{Python Module Index}{19}{section*.101}%
+\contentsline {chapter}{Index}{21}{section*.102}%

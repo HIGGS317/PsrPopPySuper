@@ -321,15 +321,12 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/tcxtt.tfm
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
-INPUT ./wxView.png
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/tcxsl.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/vf/public/txfonts/tcxsl.vf
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/rtxptmro.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/rtcxsl.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/rtxptmr.tfm
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvbi.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbttsl.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ec-qtmr.tfm
@@ -361,3 +358,4 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/txfonts/t1xbtt.
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/public/txfonts/tcxtt.pfb
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/times/utmr8a.pfb
