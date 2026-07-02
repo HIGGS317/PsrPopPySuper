@@ -47,33 +47,38 @@ the package. Make sure gfortran is installed on your system first.
 
 For manual compilation (legacy method), see the documentation.
 
-## Installation
-
-```bash
-git clone https://github.com/HIGGS317/PsrPopPySuper
-cd PsrPopPySuper
-pip install .
-```
 
 ### Prerequisites
 
 - Python 3.8+
 - gfortran compiler
+- C compiler 
 
 On macOS::
 
   brew install gcc
 
 On Linux::
+```shell
+  sudo apt-get install gcc gfortran  # Ubuntu/Debian
+  sudo yum install gcc gcc-gfortran   # CentOS/RHEL
 
-  sudo apt-get install gfortran  # Ubuntu/Debian
-  sudo yum install gcc-gfortran   # CentOS/RHEL
 ```
+
+## Installation
+
 ```bash
-cd PsrPoPySuper
+# for installing the latest dev version
+git clone -b dev  https://github.com/HIGGS317/PsrPopPySuper 
+cd PsrPopPySuper
 ```
 
 Use the [environment.yml](environment.yml) to make the conda environment and activate it
+
+```bash
+conda create --file environment.yml
+conda activate PsrpoppySuper
+```
 
 ```bash
 pip install -e .
@@ -83,22 +88,29 @@ pip install -e .
 ## Usage
 
 ```python
-import psrpoppy
+import psrpoppysuper
 ```
 
-or, following [this example](examples/populate_and_survey.py), you could do:
+or, following the below example you could do:
 
 ```python
-from psrpoppy import populate
+  from psrpoppysuper import evolve,dosurvey
 
-pop = populate.generate(1038, 
-                        surveyList=['PMSURV'],
-                        radialDistType='lfl06',
-                        siDistPars=[-1.41, 0.96], # non-standard SI distribution
-                        duty_percent=6.,
-                        electronModel='lmt85',
-                        nostdout=True # switches off output to stdout
-                       )
+  evolution = evolve.generate(ngen=1269,
+            age_max=1.0E+9,
+            birthVModel='exp',
+            birthVPars=[0,380],
+            electronModel='ne2001',
+            bFieldPars=[12.35,0.55],
+            lumDistType='fk06',
+            lumDistPars=[-1.5,0.5],
+            pDistPars=[0.3,0.15],
+            braking_index=3
+  )
+
+  survey = dosurvey.run(evolution,surveyList=['LOFAR'])
+
+  dosurvey.write(survey,asc=True,extension=f'{i}.results')
 ```
 
 Usage

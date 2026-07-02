@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  1 JUL 2026 13:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.12)  2 JUL 2026 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -903,7 +903,7 @@ File: ts1qtm.fd 2009/09/25 v1.2 font definition file for TS1/qtm
 [6]
 Chapter 3.
 LaTeX Font Info:    Font shape `T1/txtt/b/n' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 234.
+(Font)              Font shape `T1/txtt/bx/n' tried instead on input line 249.
 LaTeX Font Info:    Trying to load font information for TS1+txtt on input line 
 1.
 (/usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
@@ -917,24 +917,24 @@ Chapter 4.
 
 ]
 LaTeX Font Info:    Font shape `TS1/txtt/m/it' in size <10> not available
-(Font)              Font shape `TS1/txtt/m/sl' tried instead on input line 1069
+(Font)              Font shape `TS1/txtt/m/sl' tried instead on input line 1084
 .
  [12{/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/base/8r.enc}]
 Chapter 5.
 LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <14.4> not available
-(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1097
+(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1112
 .
 LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <14.4> not available
-(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1097
+(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1112
 .
 [13
 
 ] [14]
 LaTeX Font Info:    Font shape `T1/txtt/b/it' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1729
+(Font)              Font shape `T1/txtt/bx/it' tried instead on input line 1744
 .
 LaTeX Font Info:    Font shape `T1/txtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1729
+(Font)              Font shape `T1/txtt/bx/sl' tried instead on input line 1744
 .
  [15] [16]
 Chapter 6.
@@ -973,7 +973,7 @@ Package rerunfilecheck Info: File `PsrPopPySuper.out' has not changed.
 Here is how much of TeX's memory you used:
  20356 strings out of 469006
  368115 string characters out of 5454813
- 785870 words of memory out of 5000000
+ 786870 words of memory out of 5000000
  48518 multiletter control sequences out of 15000+600000
  692240 words of font info for 92 fonts, out of 8000000 for 9000
  320 hyphenation exceptions out of 8191
@@ -999,7 +999,7 @@ lic/txfonts/t1xtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/publ
 ic/txfonts/t1xtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/publi
 c/txfonts/tcxtt.pfb></usr/local/texlive/2026basic/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb>
-Output written on PsrPopPySuper.pdf (27 pages, 305020 bytes).
+Output written on PsrPopPySuper.pdf (27 pages, 305194 bytes).
 PDF statistics:
  697 PDF objects out of 1000 (max. 8388607)
  629 compressed objects within 7 object streams

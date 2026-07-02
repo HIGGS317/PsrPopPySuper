@@ -1,11 +1,11 @@
 # Fdb version 4
-["makeindex PsrPopPySuper.idx"] 1782893849.98681 "PsrPopPySuper.idx" "PsrPopPySuper.ind" "PsrPopPySuper" 1782893850.75482 0
-  "PsrPopPySuper.idx" 1782893850.64652 22860 553afc92af2cdc3693cdd29297f96bf6 "pdflatex"
+["makeindex PsrPopPySuper.idx"] 1782893849.98681 "PsrPopPySuper.idx" "PsrPopPySuper.ind" "PsrPopPySuper" 1782969627.09608 0
+  "PsrPopPySuper.idx" 1782969626.98222 22860 553afc92af2cdc3693cdd29297f96bf6 "pdflatex"
   (generated)
   "PsrPopPySuper.ilg"
   "PsrPopPySuper.ind"
   (rewritten before read)
-["pdflatex"] 1782893850.00444 "PsrPopPySuper.tex" "PsrPopPySuper.pdf" "PsrPopPySuper" 1782893850.75496 0
+["pdflatex"] 1782969626.32593 "PsrPopPySuper.tex" "PsrPopPySuper.pdf" "PsrPopPySuper" 1782969627.09623 0
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc" 1529098226 2457 aaabbccba4df2a7f7371410ee4e075a3 ""
   "/usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1529098226 3124 3813fd4c981d99822890a2861b0d274c ""
@@ -159,13 +159,13 @@
   "/usr/local/texlive/2026basic/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1778236867 374445 b15fcd43b2015bfb67c52c51a9d46f98 ""
   "/usr/local/texlive/2026basic/texmf-var/web2c/pdftex/pdflatex.fmt" 1773291189 2966190 f7cbde8c4edd00626177d3d4c7ea953b ""
   "/usr/local/texlive/2026basic/texmf.cnf" 1772405582 628 bbc09d6d38872d53c11bb48dc9b14e88 ""
-  "PsrPopPySuper.aux" 1782893850.64356 31140 ab2be800637ace4e498b7df044fff3d6 "pdflatex"
+  "PsrPopPySuper.aux" 1782969626.97914 31140 ab2be800637ace4e498b7df044fff3d6 "pdflatex"
   "PsrPopPySuper.ind" 1782893850.00185 13971 57e62986604e5705d14217679d41ac02 "makeindex PsrPopPySuper.idx"
-  "PsrPopPySuper.out" 1782893850.64627 5339 0ffb8c7cad66eb4041c39b550ca73dc3 "pdflatex"
-  "PsrPopPySuper.tex" 1782893842.54498 84226 e5c03f2b468e502c25f97e8adb2ec700 ""
-  "PsrPopPySuper.toc" 1782893850.64656 3397 510509ccbe07b0527a836f29020b25d3 "pdflatex"
+  "PsrPopPySuper.out" 1782969626.98191 5339 0ffb8c7cad66eb4041c39b550ca73dc3 "pdflatex"
+  "PsrPopPySuper.tex" 1782969613.10824 84599 4141e59af8a8593782ab3d0b2d7beb79 ""
+  "PsrPopPySuper.toc" 1782969626.98227 3397 510509ccbe07b0527a836f29020b25d3 "pdflatex"
   "sphinx.sty" 1780045346.61673 57237 e19e1f380d737472c975e274a37a2126 ""
-  "sphinxhighlight.sty" 1782893842.4645 7553 83fb52292c17957d9f4aadcb28c57a87 ""
+  "sphinxhighlight.sty" 1782969613.0264 7553 83fb52292c17957d9f4aadcb28c57a87 ""
   "sphinxlatexadmonitions.sty" 1780045346.61759 19258 40d230fa86bf8c791de90924bc0a9916 ""
   "sphinxlatexcontainers.sty" 1780045346.61773 900 d61f923db071a7b54d3cee8a1e6935d3 ""
   "sphinxlatexgraphics.sty" 1780045346.61787 4918 c9266041d02bc615d54b890e96e3acd3 ""
@@ -180,7 +180,7 @@
   "sphinxlatexstyletext.sty" 1780045346.62063 6932 46506bfce90adabe816de566561356fc ""
   "sphinxlatextables.sty" 1780045346.6209 63776 301b4897e4c838a7aa5af2eb139208e8 ""
   "sphinxmanual.cls" 1780045346.62111 4241 7b0d7a37df7b5715fb0dbd585c52ecdb ""
-  "sphinxmessages.sty" 1782893842.54769 745 3f5fcd6cdd7964ed608767954a8ced6f ""
+  "sphinxmessages.sty" 1782969613.11132 745 3f5fcd6cdd7964ed608767954a8ced6f ""
   "sphinxoptionsgeometry.sty" 1780045346.62142 2060 6c27b3eba37bde592ae8908ab2c1ac0f ""
   "sphinxoptionshyperref.sty" 1780045346.62155 1093 e468489bae7631a7f387b4b0f7bc15d4 ""
   "sphinxpackageboxes.sty" 1780045346.62184 36106 1be2053eb1cb9b083b3a75e3657bcb24 ""

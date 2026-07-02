@@ -1,4 +1,4 @@
-name: Psrpoppy3
+name: PsrpoppySuper
 channels:
   - conda-forge
 dependencies:
@@ -6,6 +6,7 @@ dependencies:
   - matplotlib
   - scipy
   - wxpython
+  - numpy
   - gfortran
   - toml
   - scipy

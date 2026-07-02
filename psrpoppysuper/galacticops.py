@@ -244,6 +244,7 @@ def ymw16_get_smtau(dist, gl, gb):
         scint_bw (MHz) = 1.16 / (2 * pi * tau_sc_sec)
         SM = (223 / (scint_bw * dist))^(1/1.2)
     (Cordes & Lazio 1991, eqns 46 & 48, evaluated at 1 GHz.)
+    (https://ui.adsabs.harvard.edu/abs/1991ApJ...376..123C/abstract)
     """
     # YMW16 expects distance in pc; the rest of PsrPopPy uses kpc
     # This is one possible solution, can have bugs, please let me know if you find any

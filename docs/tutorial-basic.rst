@@ -63,8 +63,8 @@ Simulate a Pulsar Survey
 ========================
 Once you've generated a pulsar population model, the ``dosurvey`` script
 can be used to run the model through a past, present or future, pulsar
-survey (as specified in files in the ``survey`` directory --- see
-:ref:`_model-survey-files`).
+survey (as specified in files in the ``survey`` directory shipped with the code
+.. :ref:`_model-survey-files`).
 
 For example, say we want to take the population model we just created,
 ``pop_ne2025.model``, and estimate from this how many pulsars would be detected

@@ -64,7 +64,7 @@
 
 
 \title{PsrPopPySuper Documentation}
-\date{Jul 01, 2026}
+\date{Jul 02, 2026}
 \release{1}
 \author{D Tripathi}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -167,25 +167,40 @@ On Linux, install gfortran using your package manager:
 \subsection{Installation}
 \label{\detokenize{installation:id2}}
 \sphinxAtStartPar
-From the source directory, run:
+If you want to install PsrPopPySuper in isolation, it is recommended
+to use a virtual conda environment. You can create one using conda.
+
+\sphinxAtStartPar
+Use the providede environment.yml to make the conda environment and activate it:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{pip} \PYG{n}{install} \PYG{o}{.}
+\PYG{n}{conda} \PYG{n}{create} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{file} \PYG{n}{environment}\PYG{o}{.}\PYG{n}{yml}
+\PYG{n}{conda} \PYG{n}{activate} \PYG{n}{PsrpoppySuper}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+After creating and activating the conda environment, navigate to the source directory and run:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{n}{e} \PYG{o}{.}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
 This will:
-1. Compile the Fortran libraries using gfortran
-2. Install the Python package
-3. Install command\sphinxhyphen{}line scripts (dosurvey, populate, evolve)
-
+\begin{itemize}
+\item {} 
 \sphinxAtStartPar
-For development or user installation:
+Compile the Fortran and C libraries using gfortran and gcc
 
-\begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{n}{e} \PYG{o}{.}  \PYG{c+c1}{\PYGZsh{} editable install}
-\PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{user} \PYG{o}{.}  \PYG{c+c1}{\PYGZsh{} user install}
-\end{sphinxVerbatim}
+\item {} 
+\sphinxAtStartPar
+Install the Python package
+
+\item {} 
+\sphinxAtStartPar
+Install command\sphinxhyphen{}line scripts (dosurvey, populate, evolve)
+
+\end{itemize}
 
 
 \section{Legacy Fortran Compilation (if needed)}
@@ -1042,8 +1057,8 @@ evolve \sphinxhyphen{}n 1000 \sphinxhyphen{}dm ne2025 \sphinxhyphen{}o evolve.mo
 \sphinxAtStartPar
 Once you’ve generated a pulsar population model, the \sphinxcode{\sphinxupquote{dosurvey}} script
 can be used to run the model through a past, present or future, pulsar
-survey (as specified in files in the \sphinxcode{\sphinxupquote{survey}} directory — see
-\DUrole{xref}{\DUrole{std}{\DUrole{std-ref}{\_model\sphinxhyphen{}survey\sphinxhyphen{}files}}}).
+survey (as specified in files in the \sphinxcode{\sphinxupquote{survey}} directory shipped with the code
+.. \DUrole{xref}{\DUrole{std}{\DUrole{std-ref}{\_model\sphinxhyphen{}survey\sphinxhyphen{}files}}}).
 
 \sphinxAtStartPar
 For example, say we want to take the population model we just created,

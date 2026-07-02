@@ -47,19 +47,31 @@ On Linux, install gfortran using your package manager::
 
 Installation
 ------------
-From the source directory, run::
+If you want to install PsrPopPySuper in isolation, it is recommended 
+to use a virtual conda environment. You can create one using conda.
 
-  pip install .
+Use the providede environment.yml to make the conda environment and activate it::
+
+
+  conda create --file environment.yml
+  conda activate PsrpoppySuper
+
+
+
+After creating and activating the conda environment, navigate to the source directory and run::
+
+  pip install -e .
 
 This will:
-1. Compile the Fortran libraries using gfortran
-2. Install the Python package
-3. Install command-line scripts (dosurvey, populate, evolve)
 
-For development or user installation::
+-  Compile the Fortran and C libraries using gfortran and gcc
+-  Install the Python package
+-  Install command-line scripts (dosurvey, populate, evolve)
 
-  pip install -e .  # editable install
-  pip install --user .  # user install
+.. For development or user installation::
+
+..   pip install -e .  # editable install
+..   pip install --user .  # user install
 
 .. _legacy_compiling_fortran:
 
