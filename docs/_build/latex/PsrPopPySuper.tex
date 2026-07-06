@@ -64,7 +64,7 @@
 
 
 \title{PsrPopPySuper Documentation}
-\date{Jul 02, 2026}
+\date{Jul 06, 2026}
 \release{1}
 \author{D Tripathi}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -111,10 +111,8 @@ To get started with PsrPopPySuper there are a few steps you’ll need to
 go through.
 
 \sphinxAtStartPar
-PsrPopPySuper is currently supported on Linux and Mac OS X, and for
-full feature support, it is recommended to install the
-\sphinxhref{http://matplotlib.org/}{Matplotlib} package and either use
-Python versions \textgreater{}3.11, or install the argparse module.
+PsrPopPySuper is currently supported on Linux and Mac OS X, with python
+version 3.11 or later.
 
 
 \section{Download the package}
@@ -166,24 +164,38 @@ On Linux, install gfortran using your package manager:
 
 \subsection{Installation}
 \label{\detokenize{installation:id2}}
-\sphinxAtStartPar
-If you want to install PsrPopPySuper in isolation, it is recommended
-to use a virtual conda environment. You can create one using conda.
 
+\subsubsection{With Conda}
+\label{\detokenize{installation:with-conda}}
 \sphinxAtStartPar
-Use the providede environment.yml to make the conda environment and activate it:
+Use the {[}environment.yml{]}(environment.yml) to make the conda environment and activate it:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
-\PYG{n}{conda} \PYG{n}{create} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{file} \PYG{n}{environment}\PYG{o}{.}\PYG{n}{yml}
+\PYG{n}{conda} \PYG{n}{create} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{file} \PYG{n}{environment}\PYG{o}{.}\PYG{n}{yml} \PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZhy{}}\PYG{n}{name} \PYG{n}{PsrPopPySuper}
 \PYG{n}{conda} \PYG{n}{activate} \PYG{n}{PsrpoppySuper}
 \end{sphinxVerbatim}
 
 \sphinxAtStartPar
-After creating and activating the conda environment, navigate to the source directory and run:
+Replace PsrPopPySuper with your own preferred name of the environment:
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 \PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{n}{e} \PYG{o}{.}
 \end{sphinxVerbatim}
+
+
+\subsubsection{Without Conda}
+\label{\detokenize{installation:without-conda}}
+\sphinxAtStartPar
+Before moving on without conda ensure you have python version 3.11+ and have working c and fortran compiler:
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{cd} \PYG{n}{PsrPopPySuper}
+\PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{n}{r} \PYG{n}{requirements}\PYG{o}{.}\PYG{n}{txt}
+\PYG{n}{pip} \PYG{n}{install} \PYG{o}{\PYGZhy{}}\PYG{n}{e} \PYG{o}{.}
+\end{sphinxVerbatim}
+
+\sphinxAtStartPar
+{\color{red}\bfseries{}\textasciigrave{}}
 
 \sphinxAtStartPar
 This will:

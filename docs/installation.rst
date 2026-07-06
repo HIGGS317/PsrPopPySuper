@@ -7,10 +7,8 @@ Installation
 To get started with PsrPopPySuper there are a few steps you'll need to 
 go through.
 
-PsrPopPySuper is currently supported on Linux and Mac OS X, and for
-full feature support, it is recommended to install the 
-`Matplotlib <http://matplotlib.org/>`_ package and either use
-Python versions >3.11, or install the argparse module.
+PsrPopPySuper is currently supported on Linux and Mac OS X, with python
+version 3.11 or later.
 
 .. _download_package:
 
@@ -47,20 +45,30 @@ On Linux, install gfortran using your package manager::
 
 Installation
 ------------
-If you want to install PsrPopPySuper in isolation, it is recommended 
-to use a virtual conda environment. You can create one using conda.
+With Conda
+^^^^^^^^^^
 
-Use the providede environment.yml to make the conda environment and activate it::
+Use the [environment.yml](environment.yml) to make the conda environment and activate it::
 
 
-  conda create --file environment.yml
+  conda create --file environment.yml --name PsrPopPySuper
   conda activate PsrpoppySuper
 
-
-
-After creating and activating the conda environment, navigate to the source directory and run::
+Replace PsrPopPySuper with your own preferred name of the environment::
 
   pip install -e .
+
+
+Without Conda
+^^^^^^^^^^^^^
+
+Before moving on without conda ensure you have python version 3.11+ and have working c and fortran compiler::
+
+
+  cd PsrPopPySuper
+  pip install -r requirements.txt
+  pip install -e .
+`
 
 This will:
 

@@ -316,6 +316,7 @@ INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmr
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc
+INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/tex-gyre/ts1-qtmb.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/fonts/tfm/public/txfonts/t1xbtt.tfm
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
 INPUT /usr/local/texlive/2026basic/texmf-dist/tex/latex/txfonts/ts1txtt.fd
