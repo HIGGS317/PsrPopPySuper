@@ -38,6 +38,12 @@ class Detections:
         self.nfaint = ntf
 
 
+def _validate_output_targets(write_global=None, write_surveyed=None):
+    """Validate output-file targets for dosurvey runs."""
+    if write_global is not None:
+        raise ValueError('Cannot write the global population from dosurvey')
+
+
 def loadModel(popfile='populate.model', popmodel=None):
     """Loads in either a model from disk (popfile, cPickle),
        or pass in a model from memory (popmodel)"""
@@ -108,9 +114,14 @@ def run(pop,
         accelsearch=False,
         jerksearch=False,
         asc_model = None,
-        noresults=False):
+        noresults=False,
+        write_global=None,
+        write_surveyed=None):
 
     """ Run the surveys and detect the pulsars."""
+
+    _validate_output_targets(write_global=write_global,
+                             write_surveyed=write_surveyed)
 
     # print the population
     if not nostdout:
@@ -196,6 +207,13 @@ def run(pop,
     if asc_model:
         pop.write_asc(asc_model)
 
+    if write_surveyed is not None:
+        surveyed_pop = Population()
+        for _, survpop, _, _ in surveyPops:
+            if survpop is not None:
+                surveyed_pop.population.extend(survpop.population)
+        surveyed_pop.write_asc(write_surveyed)
+
     # Write the local population to a file.
     # Comment out the line below to NOT write the local population.
     if not noresults:
@@ -214,7 +232,8 @@ def main():
         help='file containing population model (def=populate.model')
 
     parser.add_argument(
-        '-surveys', metavar='S', nargs='+', required=True,
+        '-survey', '-surveys', dest='surveys', metavar='S', nargs='+',
+        required=True,
         help='surveys to use to detect pulsars (required)')
 
     parser.add_argument(
@@ -260,6 +279,18 @@ def main():
         help="Output filename for input ascii population model"
     )
 
+    parser.add_argument(
+        '-wG', dest='write_global', metavar='outfile', required=False,
+        default=None,
+        help='Reject the global output option for dosurvey runs'
+    )
+
+    parser.add_argument(
+        '-wS', dest='write_surveyed', metavar='outfile', required=False,
+        default=None,
+        help='Write the surveyed ASCII population to a file'
+    )
+
     args = parser.parse_args()
 
     # Load a model population
@@ -274,7 +305,9 @@ def main():
                             accelsearch=args.accel,
                             jerksearch=args.jerk,
                             asc_model=args.asc_model,
-                            noresults=args.noresults)
+                            noresults=args.noresults,
+                            write_global=args.write_global,
+                            write_surveyed=args.write_surveyed)
 
     # write the output files
     write(surveyPopulations,

@@ -40,6 +40,13 @@ class PopulateException(Exception):
     pass
 
 
+def _validate_output_targets(write_global=None, write_surveyed=None,
+                             survey_list=None):
+    """Validate output-file targets for populate generation."""
+    if write_surveyed is not None and not survey_list:
+        raise ValueError('Cannot write surveyed population without surveys')
+
+
 def generate(ngen,
              surveyList=None,
              pDistType='lnorm',
@@ -59,7 +66,9 @@ def generate(ngen,
              nostdout=False,
              pattern='gaussian',
              orbits=False,
-             ascfile=None):
+             ascfile=None,
+             write_global=None,
+             write_surveyed=None):
 
     """
     Generate a population of pulsars.
@@ -82,7 +91,12 @@ def generate(ngen,
     nostdout -- (bool) switch off stdout
     """
 
+    _validate_output_targets(write_global=write_global,
+                             write_surveyed=write_surveyed,
+                             survey_list=surveyList)
+
     pop = Population()
+    surveyed_pop = Population()
 
     # check that the distribution types are supported....
     if lumDistType not in ['lnorm', 'pow']:
@@ -359,6 +373,8 @@ def generate(ngen,
 
             # add the pulsar to the population
             pop.population.append(p)
+            if detect_int:
+                surveyed_pop.population.append(p)
 
             # if detected, increment ndet (for whole population)
             # and redraw the progress bar
@@ -389,6 +405,12 @@ def generate(ngen,
 
     if ascfile:
         pop.write_asc(ascfile)
+
+    if write_global is not None:
+        pop.write_asc(write_global)
+
+    if write_surveyed is not None:
+        surveyed_pop.write_asc(write_surveyed)
 
     return pop
 
@@ -500,7 +522,8 @@ def main():
     parser.add_argument('-n', type=int, required=True,
                         help='number of pulsars to generate/detect')
     # list of surveys to use (if any)
-    parser.add_argument('-surveys', metavar='S', nargs='+', default=None,
+    parser.add_argument('-survey', '-surveys', dest='surveys', metavar='S',
+                        nargs='+', default=None,
                         help='surveys to use to check if pulsars are detected'
                         )
     # galactic-Z distn
@@ -580,6 +603,14 @@ def main():
                         default=None,
                         help='Output filename for ASCII population model')
 
+    parser.add_argument('-wG', dest='write_global', metavar='outfile',
+                        required=False, default=None,
+                        help='Write the global ASCII population to a file')
+
+    parser.add_argument('-wS', dest='write_surveyed', metavar='outfile',
+                        required=False, default=None,
+                        help='Write the surveyed ASCII population to a file')
+
     parser.add_argument('--nostdout', nargs='?', const=True, default=False,
                         help='flag to switch off std output (def=False)')
 
@@ -613,7 +644,9 @@ def main():
                    doubleSpec=args.doublespec,
                    nostdout=args.nostdout,
                    orbits=args.orbits,
-                   ascfile=args.asc
+                   ascfile=args.asc,
+                   write_global=args.write_global,
+                   write_surveyed=args.write_surveyed
                    )
 
     # pop.write(outf=args.o)

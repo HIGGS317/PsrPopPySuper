@@ -57,6 +57,14 @@ survey, omit the ``-surveys`` option and use the output file directly:
 
   evolve -n 1000 -dm ne2025 -o evolve.model
 
+To write the generated population in plain ASCII format, use ``-wG``.
+To write only the survey-detected subset, use ``-wS`` together with
+``-surveys``. For example:
+
+  evolve -n 1000 -wG evolve_global.txt
+
+  evolve -n 1000 -surveys PMSURV -wG evolve_global.txt -wS evolve_surveyed.txt
+
 .. _simulate_survey:
 
 Simulate a Pulsar Survey

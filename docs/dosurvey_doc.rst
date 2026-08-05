@@ -21,6 +21,12 @@ dosurvey.py
    Write the survey model in plain ascii (psrpop old style). Not recommended, 
    since the cPickle '.results' file is easier to work with.
 
+.. cmdoption:: -wS <surveyed ascii output file name>
+
+   Write the surveyed ASCII population to a file. This option requires the
+   ``-surveys`` (or ``-survey``) argument and is the preferred way to output
+   survey-detected pulsars in ascii format.
+
 .. cmdoption:: --summary
 
    Write a short .summary file (per survey) describing number of detections,

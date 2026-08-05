@@ -43,6 +43,13 @@ class EvolveException(Exception):
     pass
 
 
+def _validate_output_targets(write_global=None, write_surveyed=None,
+                             survey_list=None):
+    """Validate output-file targets for evolve/populate generation."""
+    if write_surveyed is not None and not survey_list:
+        raise ValueError('Cannot write surveyed population without surveys')
+
+
 def generate(ngen,
              surveyList=None,
              age_max=1.0E9,
@@ -68,9 +75,16 @@ def generate(ngen,
              nostdout=False,
              nospiralarms=False,
              keepdead=False,
-             ascfile = None):
+             ascfile=None,
+             write_global=None,
+             write_surveyed=None):
+
+    _validate_output_targets(write_global=write_global,
+                             write_surveyed=write_surveyed,
+                             survey_list=surveyList)
 
     pop = Population()
+    surveyed_pop = Population()
 
     # set the parameters in the population object
     pop.pmean, pop.psigma = pDistPars
@@ -367,6 +381,8 @@ def generate(ngen,
 
             # pulsar isn't dead, add to population!
             pop.population.append(pulsar)
+            if surveyList and detect_int:
+                surveyed_pop.population.append(pulsar)
 
         else:
             # pulsar is dead.
@@ -411,6 +427,12 @@ def generate(ngen,
 
     if ascfile:
         pop.write_asc(ascfile)
+
+    if write_global is not None:
+        pop.write_asc(write_global)
+
+    if write_surveyed is not None:
+        surveyed_pop.write_asc(write_surveyed)
 
     return pop
 
@@ -681,7 +703,8 @@ def main():
                         help='number of pulsars to generate/detect')
 
     # list of surveys to use (if any)
-    parser.add_argument('-surveys', metavar='S', nargs='+', default=None,
+    parser.add_argument('-survey', '-surveys', dest='surveys', metavar='S',
+                        nargs='+', default=None,
                         help='surveys to use to check if pulsars are detected'
                         )
 
@@ -796,6 +819,14 @@ def main():
                         default=None,
                         help="Output filename for ASCII population model")
 
+    parser.add_argument('-wG', dest='write_global', metavar='outfile',
+                        required=False, default=None,
+                        help='Write the global ASCII population to a file')
+
+    parser.add_argument('-wS', dest='write_surveyed', metavar='outfile',
+                        required=False, default=None,
+                        help='Write the surveyed ASCII population to a file')
+
     # turn off printing to stdout
     parser.add_argument('--nostdout', nargs='?', const=True, default=False,
                         help='switch off std output')
@@ -844,7 +875,9 @@ def main():
                    efficiencycut=args.eff,
                    nospiralarms=args.nospiralarms,
                    keepdead=args.keepdead,
-                   ascfile=args.asc)
+                   ascfile=args.asc,
+                   write_global=args.write_global,
+                   write_surveyed=args.write_surveyed)
 
     # pop.write(outf=args.o)
 

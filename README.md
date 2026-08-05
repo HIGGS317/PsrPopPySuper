@@ -93,15 +93,18 @@ A brief description of the "executables" follows.
 populate
 --------
 
-Create a population mode using user-defined parameters using the snapshot method
+Create a population mode using user-defined parameters using the snapshot method.
+Supports writing the generated population to ASCII with ``-wG`` and the surveyed subset with ``-wS`` when used together with ``-surveys``.
 
 evolve
 ------
 
-Create a populate model using the Ridley & Lorimer evolution method
+Create a populate model using the Ridley & Lorimer evolution method.
+Supports writing the generated population to ASCII with ``-wG`` and the surveyed subset with ``-wS`` when used with ``-surveys``.
 
 dosurvey 
 --------
 
 Run a population model through a survey. Pre-defined surveys are given, but a user may also create their own.
+Supports writing survey-detected pulsars to ASCII with ``-wS``.
 

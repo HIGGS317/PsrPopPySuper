@@ -14,6 +14,16 @@ evolve.py
 
    Output file name for ascii output file (def=None)
 
+.. cmdoption:: -wG <global ascii output file name>
+
+   Write the global ASCII population to a file. This option is valid
+   whether or not a survey list is supplied.
+
+.. cmdoption:: -wS <surveyed ascii output file name>
+
+   Write the surveyed ASCII population to a file. This requires a survey
+   list via ``-surveys`` (or ``-survey``) and is invalid without surveys.
+
 .. cmdoption:: -surveys <SURVEY NAME(S)>
 
    List of surveys to use when trying to detect pulsars (default=None)

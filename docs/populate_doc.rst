@@ -15,6 +15,16 @@ populate.py
 
    Output file name for ascii output file (def=populate.txt)
 
+.. cmdoption:: -wG <global ascii output file name>
+
+   Write the generated global ASCII population to a file. This option works
+   with or without a survey list.
+
+.. cmdoption:: -wS <surveyed ascii output file name>
+
+   Write the surveyed ASCII population to a file. This requires a survey
+   list supplied via ``-surveys`` (or ``-survey``).
+
 .. cmdoption:: -surveys <SURVEY NAME(S)>
 
    List of surveys to use when trying to detect pulsars (default=None)
