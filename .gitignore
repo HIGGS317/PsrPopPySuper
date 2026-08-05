@@ -19,3 +19,7 @@ run.sh
 setup-requires/
 psrpoppy.egg-info/
 *.json
+.pytest_cache/
+docs/_build/
+docs/_static/
+docs/_templates/
