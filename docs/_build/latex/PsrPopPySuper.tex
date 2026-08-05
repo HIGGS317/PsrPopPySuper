@@ -64,7 +64,7 @@
 
 
 \title{PsrPopPySuper Documentation}
-\date{Jul 06, 2026}
+\date{Aug 01, 2026}
 \release{1}
 \author{D Tripathi}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -291,6 +291,34 @@ Output file name for ascii output file (def=populate.txt)
 
 \end{fulllineitems}
 
+\index{populate.py command line option@\spxentry{populate.py command line option}!\sphinxhyphen{}wG@\spxentry{\sphinxhyphen{}wG}}\index{\sphinxhyphen{}wG@\spxentry{\sphinxhyphen{}wG}!populate.py command line option@\spxentry{populate.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-populate.py-wG}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wG}}\sphinxcode{\sphinxupquote{~\textless{}global~ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Write the generated global ASCII population to a file. This option works
+with or without a survey list.
+
+\end{fulllineitems}
+
+\index{populate.py command line option@\spxentry{populate.py command line option}!\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}}\index{\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}!populate.py command line option@\spxentry{populate.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-populate.py-wS}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wS}}\sphinxcode{\sphinxupquote{~\textless{}surveyed~ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Write the surveyed ASCII population to a file. This requires a survey
+list supplied via \sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}} (or \sphinxcode{\sphinxupquote{\sphinxhyphen{}survey}}).
+
+\end{fulllineitems}
+
 \index{populate.py command line option@\spxentry{populate.py command line option}!\sphinxhyphen{}surveys@\spxentry{\sphinxhyphen{}surveys}}\index{\sphinxhyphen{}surveys@\spxentry{\sphinxhyphen{}surveys}!populate.py command line option@\spxentry{populate.py command line option}}
 
 \begin{fulllineitems}
@@ -513,6 +541,21 @@ since the cPickle ‘.results’ file is easier to work with.
 
 \end{fulllineitems}
 
+\index{dosurvey.py command line option@\spxentry{dosurvey.py command line option}!\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}}\index{\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}!dosurvey.py command line option@\spxentry{dosurvey.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-dosurvey.py-wS}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wS}}\sphinxcode{\sphinxupquote{~\textless{}surveyed~ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Write the surveyed ASCII population to a file. This option requires the
+\sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}} (or \sphinxcode{\sphinxupquote{\sphinxhyphen{}survey}}) argument and is the preferred way to output
+survey\sphinxhyphen{}detected pulsars in ascii format.
+
+\end{fulllineitems}
+
 \index{dosurvey.py command line option@\spxentry{dosurvey.py command line option}!\sphinxhyphen{}\sphinxhyphen{}summary@\spxentry{\sphinxhyphen{}\sphinxhyphen{}summary}}\index{\sphinxhyphen{}\sphinxhyphen{}summary@\spxentry{\sphinxhyphen{}\sphinxhyphen{}summary}!dosurvey.py command line option@\spxentry{dosurvey.py command line option}}
 
 \begin{fulllineitems}
@@ -579,6 +622,34 @@ Output file name for population model (def=evolve.model)
 \pysigstopsignatures
 \sphinxAtStartPar
 Output file name for ascii output file (def=None)
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}wG@\spxentry{\sphinxhyphen{}wG}}\index{\sphinxhyphen{}wG@\spxentry{\sphinxhyphen{}wG}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-wG}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wG}}\sphinxcode{\sphinxupquote{~\textless{}global~ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Write the global ASCII population to a file. This option is valid
+whether or not a survey list is supplied.
+
+\end{fulllineitems}
+
+\index{evolve.py command line option@\spxentry{evolve.py command line option}!\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}}\index{\sphinxhyphen{}wS@\spxentry{\sphinxhyphen{}wS}!evolve.py command line option@\spxentry{evolve.py command line option}}
+
+\begin{fulllineitems}
+\phantomsection\label{\detokenize{cmd-line-docs:cmdoption-evolve.py-wS}}
+\pysigstartsignatures
+\pysigline
+{\sphinxbfcode{\sphinxupquote{\sphinxhyphen{}wS}}\sphinxcode{\sphinxupquote{~\textless{}surveyed~ascii~output~file~name\textgreater{}}}}
+\pysigstopsignatures
+\sphinxAtStartPar
+Write the surveyed ASCII population to a file. This requires a survey
+list via \sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}} (or \sphinxcode{\sphinxupquote{\sphinxhyphen{}survey}}) and is invalid without surveys.
 
 \end{fulllineitems}
 
@@ -1063,6 +1134,19 @@ survey, omit the \sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}} option and 
 evolve \sphinxhyphen{}n 1000 \sphinxhyphen{}dm ne2025 \sphinxhyphen{}o evolve.model
 \end{quote}
 
+\sphinxAtStartPar
+To write the generated population in plain ASCII format, use \sphinxcode{\sphinxupquote{\sphinxhyphen{}wG}}.
+To write only the survey\sphinxhyphen{}detected subset, use \sphinxcode{\sphinxupquote{\sphinxhyphen{}wS}} together with
+\sphinxcode{\sphinxupquote{\sphinxhyphen{}surveys}}. For example:
+\begin{quote}
+
+\sphinxAtStartPar
+evolve \sphinxhyphen{}n 1000 \sphinxhyphen{}wG evolve\_global.txt
+
+\sphinxAtStartPar
+evolve \sphinxhyphen{}n 1000 \sphinxhyphen{}surveys PMSURV \sphinxhyphen{}wG evolve\_global.txt \sphinxhyphen{}wS evolve\_surveyed.txt
+\end{quote}
+
 
 \section{Simulate a Pulsar Survey}
 \label{\detokenize{tutorial-basic:simulate-a-pulsar-survey}}\label{\detokenize{tutorial-basic:simulate-survey}}
@@ -1429,7 +1513,7 @@ either \sphinxcode{\sphinxupquote{eq}} or \sphinxcode{\sphinxupquote{gal}}. If \
 
 
 
-\section{{\hyperref[\detokenize{module-level-docs:module-populate}]{\sphinxcrossref{\sphinxstyleliteralintitle{\sphinxupquote{populate}}}}} \textendash{} Create a population object}
+\section{\sphinxstyleliteralintitle{\sphinxupquote{populate}} \textendash{} Create a population object}
 \label{\detokenize{module-level-docs:module-populate}}\label{\detokenize{module-level-docs:populate-create-a-population-object}}\label{\detokenize{module-level-docs:populate-module-docs}}\index{module@\spxentry{module}!populate@\spxentry{populate}}\index{populate@\spxentry{populate}!module@\spxentry{module}}\index{Populate (class in populate)@\spxentry{Populate}\spxextra{class in populate}}
 
 \begin{fulllineitems}
@@ -1447,11 +1531,16 @@ either \sphinxcode{\sphinxupquote{eq}} or \sphinxcode{\sphinxupquote{gal}}. If \
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{Populate.}}\sphinxbfcode{\sphinxupquote{generate}}}
-{\sphinxparam{\DUrole{n}{ngen}}\sphinxoptional{\sphinxparamcomma \sphinxparam{\DUrole{n}{surveyList}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{radialDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{electronModel}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{siDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{zscale}}\sphinxparamcomma \sphinxparam{\DUrole{n}{duty}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scindex}}\sphinxparamcomma \sphinxparam{\DUrole{n}{gpsArgs}}\sphinxparamcomma \sphinxparam{\DUrole{n}{doubleSpec}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nostdout}}}}
+{\sphinxparam{\DUrole{n}{ngen}}\sphinxoptional{\sphinxparamcomma \sphinxparam{\DUrole{n}{surveyList}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{radialDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{electronModel}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{siDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistType}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistPars}}\sphinxparamcomma \sphinxparam{\DUrole{n}{zscale}}\sphinxparamcomma \sphinxparam{\DUrole{n}{duty}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scindex}}\sphinxparamcomma \sphinxparam{\DUrole{n}{gpsArgs}}\sphinxparamcomma \sphinxparam{\DUrole{n}{doubleSpec}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nostdout}}\sphinxparamcomma \sphinxparam{\DUrole{n}{write\_global}}\sphinxparamcomma \sphinxparam{\DUrole{n}{write\_surveyed}}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
-The method called by the \sphinxcode{\sphinxupquote{populate.py}} command\sphinxhyphen{}line\sphinxhyphen{}script
+The method called by the \sphinxcode{\sphinxupquote{populate.py}} command\sphinxhyphen{}line\sphinxhyphen{}script.
+
+\sphinxAtStartPar
+\sphinxcode{\sphinxupquote{write\_global}} writes the entire generated population to ASCII, and
+\sphinxcode{\sphinxupquote{write\_surveyed}} writes the detected subset to ASCII when a survey list
+is provided.
 
 \end{fulllineitems}
 
@@ -1771,11 +1860,16 @@ and typically \({\rm{scatterindex}} = -3.86\) (but there is an option to vary it
 \pysigstartsignatures
 \pysiglinewithargsret
 {\sphinxcode{\sphinxupquote{evolve.}}\sphinxbfcode{\sphinxupquote{generate}}}
-{\sphinxparam{\DUrole{n}{ngen}}\sphinxparamcomma \sphinxparam{\DUrole{n}{surveyList}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{age\_max}\DUrole{o}{=}\DUrole{default_value}{1.0E9}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}.3, .15{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{bFieldPars}\DUrole{o}{=}\DUrole{default_value}{{[}12.65, 0.55{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVPars}\DUrole{o}{=}\DUrole{default_value}{{[}0.0, 180.{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{siDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.6, 0.35{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}orthogonal\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistType}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.5, 0.5{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignTime}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{spinModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{beamModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}tm98\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}gaussian\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{electronModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}ne2025\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{braking\_index}\DUrole{o}{=}\DUrole{default_value}{0}}\sphinxparamcomma \sphinxparam{\DUrole{n}{zscale}\DUrole{o}{=}\DUrole{default_value}{0.05}}\sphinxparamcomma \sphinxparam{\DUrole{n}{duty}\DUrole{o}{=}\DUrole{default_value}{5.}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scindex}\DUrole{o}{=}\DUrole{default_value}{\sphinxhyphen{}3.86}}\sphinxparamcomma \sphinxparam{\DUrole{n}{widthModel}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nodeathline}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{efficiencycut}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nostdout}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nospiralarms}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{keepdead}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{ascfile}\DUrole{o}{=}\DUrole{default_value}{None}}}
+{\sphinxparam{\DUrole{n}{ngen}}\sphinxparamcomma \sphinxparam{\DUrole{n}{surveyList}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{age\_max}\DUrole{o}{=}\DUrole{default_value}{1.0E9}}\sphinxparamcomma \sphinxparam{\DUrole{n}{pDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}.3, .15{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{bFieldPars}\DUrole{o}{=}\DUrole{default_value}{{[}12.65, 0.55{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVPars}\DUrole{o}{=}\DUrole{default_value}{{[}0.0, 180.{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{siDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.6, 0.35{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}orthogonal\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistType}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{lumDistPars}\DUrole{o}{=}\DUrole{default_value}{{[}\sphinxhyphen{}1.5, 0.5{]}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{alignTime}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{spinModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}fk06\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{beamModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}tm98\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{birthVModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}gaussian\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{electronModel}\DUrole{o}{=}\DUrole{default_value}{\textquotesingle{}ne2025\textquotesingle{}}}\sphinxparamcomma \sphinxparam{\DUrole{n}{braking\_index}\DUrole{o}{=}\DUrole{default_value}{0}}\sphinxparamcomma \sphinxparam{\DUrole{n}{zscale}\DUrole{o}{=}\DUrole{default_value}{0.05}}\sphinxparamcomma \sphinxparam{\DUrole{n}{duty}\DUrole{o}{=}\DUrole{default_value}{5.}}\sphinxparamcomma \sphinxparam{\DUrole{n}{scindex}\DUrole{o}{=}\DUrole{default_value}{\sphinxhyphen{}3.86}}\sphinxparamcomma \sphinxparam{\DUrole{n}{widthModel}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nodeathline}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{efficiencycut}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nostdout}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{nospiralarms}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{keepdead}\DUrole{o}{=}\DUrole{default_value}{False}}\sphinxparamcomma \sphinxparam{\DUrole{n}{ascfile}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{write\_global}\DUrole{o}{=}\DUrole{default_value}{None}}\sphinxparamcomma \sphinxparam{\DUrole{n}{write\_surveyed}\DUrole{o}{=}\DUrole{default_value}{None}}}
 {}
 \pysigstopsignatures
 \sphinxAtStartPar
 Generate an evolved pulsar population model.
+
+\sphinxAtStartPar
+The optional \sphinxcode{\sphinxupquote{write\_global}} argument writes the full generated population
+to an ASCII file. The optional \sphinxcode{\sphinxupquote{write\_surveyed}} argument writes the
+survey\sphinxhyphen{}detected subset to ASCII and requires \sphinxcode{\sphinxupquote{surveyList}} to be set.
 
 \end{fulllineitems}
 
@@ -1823,7 +1917,6 @@ Entry point for the evolve console script.
 \item\relax\sphinxstyleindexentry{galacticops}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-galacticops}}
 \indexspace
 \bigletter{p}
-\item\relax\sphinxstyleindexentry{populate}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-populate}}
 \item\relax\sphinxstyleindexentry{population}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-population}}
 \item\relax\sphinxstyleindexentry{pulsar}\sphinxstyleindexpageref{module-level-docs:\detokenize{module-pulsar}}
 \indexspace
