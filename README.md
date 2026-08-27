@@ -45,6 +45,14 @@ pip install -e .
 
 ### Without Conda
 
+If on Linux, make a python virtual environment using venv and then activate it.
+
+```bash
+python -m venv [ Name of your virtual environment ]
+source [ Your virtual environment name]/bin/activate ]
+```
+
+
 Before moving on without conda ensure you have python version 3.11+ and have install c and fortran compiler.
 
 ```bash
